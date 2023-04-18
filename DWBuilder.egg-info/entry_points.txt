@@ -1,0 +1,3 @@
+[console_scripts]
+dbuilder = scripts.dbuilder:main
+dwbuilder = scripts.dwbuilder:main

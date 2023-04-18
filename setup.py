@@ -7,7 +7,6 @@ setup(
     author='M.Z.Khalid',
     author_email='muhammad.z.khalid@ntnu.no',
     description='A package for developing domain wall structures for atomistic calculations',
-    url='https://github.com/mzkhalid039/DWBuilder',
     license='MIT',
     packages=find_packages(),
     install_requires=['ase','numpy','matplotlib'],
