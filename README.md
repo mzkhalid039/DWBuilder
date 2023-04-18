@@ -1,5 +1,5 @@
 # DWBuilder: Domain Wall Builder
-Ferroelectric/Antiferroelectric domain_wall_builder creates domain walls for the ferroelectrics perovskites. The code reads the structure in the vasp format, and then creates domain walls with user-defined sizes and angles.
+Ferroelectric/Antiferroelectric domain_wall_builder creates domain walls and interface structure for the perovskites and ceramics. The code reads the structure in the vasp format, and then creates domain walls with user-defined sizes and angles.
 
 # Overview
 There are two main scripts [dwbuilder.py_](./dwbuilder.py) and [dbuilder.py_](./dbuilder.py) which build domain wall and single domain structures, respectively. For the domain wall and interfaces, you only need to run [dwbuilder.py_](./dwbuilder.py). These scripts can be executed from the command line. I also have included examples of ferroelectric domain walls.  
