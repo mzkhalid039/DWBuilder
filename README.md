@@ -17,14 +17,17 @@ _ex:_
 
 Once you have developed the desired domain wall structure, you can visualize in vesta or ase to further refine domain wall artifacts.  In the above examples, the domain walls are parallel along (001)//(001) planes. It is also important to know that all the domain wall contrusted in this package follow the orthogonality  condition, which means lattice vectors a,b and c are mutually perpendicular (i.e., orthognal) to each other and fulfill these conditions: 
 
-a x b = c;
-a x c = b; 
-b x c = a;
+a x b = c
+a x c = b
+b x c = a
 ```
 
+# Questions/Contributions
+If you have any questions, raise an issue or contact [me](mailto:muhammad.z.khalid@ntnu.no).
+This project is currently under development and at the moment. 
 
-## License
-This code is released under the MIT License. Please see the LICENSE file for details.
+# License
+[MIT](./LICENSE).  
 
 
 
