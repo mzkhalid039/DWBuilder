@@ -53,7 +53,7 @@ b x c = a
 
 # Questions/Contributions
 If you have any questions, raise an issue or contact [me](mailto:muhammad.z.khalid@ntnu.no).
-This project is currently under development and at the moment. 
+This project is currently under development. 
 
 # License
 [MIT](./LICENSE).  
