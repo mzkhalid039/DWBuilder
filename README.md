@@ -18,11 +18,11 @@ _ex:_
 '''
 >Select the system:
 
-1 - R3c
-2 - R3m
-3 - P4mm
-4 - P63/mmc-Haxagonal Manganites
-5 - Manual interfaces/DW with ORs
+>1 - R3c
+>2 - R3m
+>3 - P4mm
+>4 - P63/mmc-Haxagonal Manganites
+>5 - Manual interfaces/DW with ORs
  1
 Enter the input file name (with extension):  BiFeO3_R3c.vasp
 Select the domain wall angle:
