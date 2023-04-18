@@ -15,11 +15,6 @@ To execute the code, one should run the dwbuilder command from the command line.
 
 _ex:_
 
-'''
->![image](https://user-images.githubusercontent.com/52278972/232845717-47bd3399-376e-44e9-be4c-eb3d142135da.png)
-...
-```
-
 Once you have developed the desired domain wall structure, you can visualize in vesta or ase to further refine domain wall artifacts.  In the above examples, the domain walls are parallel along (001)//(001) planes. It is also important to know that all the domain wall contrusted in this package follow the orthogonality  condition, which means lattice vectors a,b and c are mutually perpendicular (i.e., orthognal) to each other and fulfill these conditions: 
 
 a x b = c
