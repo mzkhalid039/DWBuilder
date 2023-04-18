@@ -1,4 +1,4 @@
-# DWB: Domain Wall Builder
+# DWBuilder: Domain Wall Builder
 Ferroelectric/Antiferroelectric domain_wall_builder creates domain walls for the ferroelectrics perovskites. The code reads the structure in the vasp format, and then creates domain walls with user-defined sizes and angles.
 
 ## Prerequisites
