@@ -7,30 +7,58 @@ import numpy as np
 from colorama import init, Fore, Style
 from numpy.linalg import norm
 from colorama import Fore, Style
+from pymatgen.core.structure import Structure
+from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 
 # Find the path of the current directory
 current_path = os.getcwd()
 
+filename = input("Enter the input file name (with extension): ")
+D1 = ase.io.read(filename)
 
-# Prompt the user to select the system
-print("Select the system:")
-print("1 - R3c")
-print("2 - R3m")
-print("3 - P4mm")
-print("4 - P63/mmc-Haxagonal Manganites")
-print("5 - Manual interfaces/DW with ORs")
+struct = Structure.from_file(filename)
+sym = SpacegroupAnalyzer(struct)
+data = sym.get_symmetry_dataset()
 
-system_selection = int(input())
+print("Space group number: {}".format(data["number"]))
+print("International symbol: {}".format(data["international"]))
+print(f"Lattice type: {sym.get_lattice_type()}")
+
+# Conditionally select the system based on international symbol
+if data["international"] == "R3c":
+    system_selection = 1
+elif data["international"] == "R3m":
+    system_selection = 2
+elif data["international"] == "P4mm":
+    system_selection = 3
+elif data["international"] == "P6_3cm":
+    system_selection = 4
+elif data["international"] == "Pnma":
+    system_selection = 5
+
+else:
+    print("Warning: The international symbol does not match any pre-defined systems.")
+    print("Please manually select the system.")
+    system_selection = 6
+
+# Prompt the user to select the system if not automatically selected
+if system_selection == 6:
+    print("Select the system:")
+    print("1 - R3c")
+    print("2 - R3m")
+    print("3 - P4mm")
+    print("4 - P6_3cm")
+    print("5 - Pnma")
+    print("6 - Interface/Dws with known ORs")
+
+
+    system_selection = int(input())
 
 # BFO system
 if system_selection == 1:
-    # Prompt the user to enter the input file name
-    filename = input("Enter the input file name (with extension): ")
-    # Read the input file
-    BFO1 = ase.io.read(filename)
 
     # Cut and rotate the structure to obtain a pseudo-cubic structure
-    pseudo_cubic = cut(BFO1, a=[1.0, 1.0, -1], b=[-1, 1, 1], c=[1, -1, 1])
+    pseudo_cubic = cut(D1, a=[1.0, 1.0, -1], b=[-1, 1, 1], c=[1, -1, 1])
     rotate(pseudo_cubic, pseudo_cubic.cell[0], (0,1,0), pseudo_cubic.cell[1], (1,0,0))
 
     # Write the pseudo-cubic structure to a VASP file
@@ -118,9 +146,6 @@ print("Domain wall structures and supercells created successfully!")
  # BaTiO3 system
 if system_selection == 2:
     # Prompt the user to enter the input file name
-    filename = input("Enter the input file name (with extension): ")
-    # Read the input file
-    BTO1 = ase.io.read(filename)
 
     # Prompt the user to select the domain wall angle
     print("Select the domain wall angle:")
@@ -138,9 +163,9 @@ if system_selection == 2:
 
     # Cut and rotate the slabs based on the selected domain wall angle(s)
     if angle_selection == 1 or angle_selection == 4:
-        slab1 = cut(BTO1, a=[1, 1, 0], b=[0, 0, 1], c=[domain_size, -domain_size, 0])
+        slab1 = cut(D1, a=[1, 1, 0], b=[0, 0, 1], c=[domain_size, -domain_size, 0])
         rotate(slab1, slab1.cell[0], (0,1,0), slab1.cell[1], (1,0,0))
-        slab2 = cut(BTO1, a=[-1, -1, 0], b=[0, 0, -1], c=[domain_size, -domain_size, 0])
+        slab2 = cut(D1, a=[-1, -1, 0], b=[0, 0, -1], c=[domain_size, -domain_size, 0])
         rotate(slab2, slab2.cell[0], (0,1,0), slab2.cell[1], (1,0,0))
         slab180 = stack(slab1, slab2, axis=2, maxstrain=None)
         os.makedirs(os.path.join(current_path, 'R180'))
@@ -153,9 +178,9 @@ if system_selection == 2:
 
     
     if angle_selection == 2 or angle_selection == 4:
-        slab1 = cut(BTO1, a=[domain_size, domain_size, 0], b=[0, 0, 1], c=[1, -1, 0])
+        slab1 = cut(D1, a=[domain_size, domain_size, 0], b=[0, 0, 1], c=[1, -1, 0])
         rotate(slab1, slab1.cell[0], (0,1,0), slab1.cell[1], (1,0,0))
-        slab2 = cut(BTO1, a=[domain_size, domain_size, 0], b=[0, 0, -1], c=[-1, 1, 0])
+        slab2 = cut(D1, a=[domain_size, domain_size, 0], b=[0, 0, -1], c=[-1, 1, 0])
         rotate(slab2, slab2.cell[0], (0,1,0), slab2.cell[1], (1,0,0))
         slab71 = stack(slab1, slab2, axis=0, maxstrain=None)
         os.makedirs(os.path.join(current_path, 'R71'))
@@ -169,9 +194,9 @@ if system_selection == 2:
 
 
     if angle_selection == 3 or angle_selection == 4:
-        slab1 = cut(BTO1, a=[domain_size, 0.0, 0], b=[0, 1, 0], c=[0, 0, 1])
+        slab1 = cut(D1, a=[domain_size, 0.0, 0], b=[0, 1, 0], c=[0, 0, 1])
         rotate(slab1, slab1.cell[0], (0,1,0), slab1.cell[1], (1,0,0))
-        slab2 = cut(BTO1, a=[domain_size, 0.0, 0], b=[0, -1, 0], c=[0, 0, -1])
+        slab2 = cut(D1, a=[domain_size, 0.0, 0], b=[0, -1, 0], c=[0, 0, -1])
         rotate(slab2, slab2.cell[0], (0,1,0), slab2.cell[1], (1,0,0))
         slab109 = stack(slab1, slab2, axis=0, maxstrain=None)
         os.makedirs(os.path.join(current_path, 'R109'))
@@ -208,9 +233,6 @@ if system_selection == 2:
  # PTO system
 if system_selection == 3:
     # Prompt the user to enter the input file name
-    filename = input("Enter the input file name (with extension): ")
-    # Read the input file
-    PT = ase.io.read(filename)
     
     # Prompt the user to select the domain wall angle
     print("Select the domain wall angle:")
@@ -223,9 +245,9 @@ if system_selection == 3:
 
     # Cut and rotate the slabs based on the selected domain wall angle(s)
     if angle_selection == 1 or angle_selection == 3:
-        slab1 = cut(PT, a=[1.01, 0, 0], b=[0, domain_size, 0], c=[0, 0, 1.01])
+        slab1 = cut(D1, a=[1.01, 0, 0], b=[0, domain_size, 0], c=[0, 0, 1.01])
         rotate(slab1, slab1.cell[0], (0,1,0), slab1.cell[1], (1,0,0))
-        slab2 = cut(PT, a=[-1.01, 0, 0], b=[0, domain_size, 0], c=[0, 0, -1.01])
+        slab2 = cut(D1, a=[-1.01, 0, 0], b=[0, domain_size, 0], c=[0, 0, -1.01])
         rotate(slab2, slab2.cell[0], (0,1,0), slab2.cell[1], (1,0,0))
         slab180 = stack(slab1, slab2, axis=1, maxstrain=None)
         os.makedirs(os.path.join(current_path, 'T180'))
@@ -238,9 +260,9 @@ if system_selection == 3:
 
     
     if angle_selection == 2 or angle_selection == 3:
-        slab1 = cut(PT, a=[0, 1, 0], b=[-1, 0, 1], c=[domain_size, 0, domain_size])
+        slab1 = cut(D1, a=[0, 1, 0], b=[-1, 0, 1], c=[domain_size, 0, domain_size])
         rotate(slab1, slab1.cell[0], (0,1,0), slab1.cell[1], (1,0,0))
-        slab2 = cut(PT, a=[0, -1, 0], b=[1, 0, -1], c=[domain_size, 0, domain_size])
+        slab2 = cut(D1, a=[0, -1, 0], b=[1, 0, -1], c=[domain_size, 0, domain_size])
         rotate(slab2, slab2.cell[0], (0,1,0), slab2.cell[1], (1,0,0))
         slab90 = stack(slab1, slab2, axis=2, maxstrain=None)
         os.makedirs(os.path.join(current_path, 'T90'))
@@ -274,7 +296,6 @@ if system_selection == 3:
 # YMO system
 if system_selection == 4:
     # Prompt the user to enter the input file name
-    filename1 = input("Enter the input domain1 file name (with extension): ")
     filename2 = input("Enter the input domain2 file name (with extension): ")
 
     # Read the input file
@@ -339,19 +360,42 @@ if system_selection == 4:
     print("Domain wall structures and supercells created successfully!")
 
 
-
-# Manually develop interfaces/DW if you have ORs
+ # CTO system
 if system_selection == 5:
+    # Prompt the user to enter the input file name
+
+
+    # Prompt the user to enter the lattice vector sizes
+    print("Pnma space group has ferroelastic domain walls")
+
+    # Prompt the user to enter the lattice vector sizes
+    domain_size = int(input("Enter the domain wall size (in number of unit cells): "))
+
+    # Cut and rotate the slabs based on the selected domain wall angle(s)
+    slab1 = cut(D1, a=[1, 1, 0], b=[0.0, 0.0, 1], c=[domain_size, -domain_size, 0])
+    rotate(slab1, slab1.cell[0], (0,1,0), slab1.cell[1], (1,0,0))
+    slab2 = cut(D1, a=[-1, 1, 0], b=[0.0, 0.0, 1], c=[domain_size, domain_size, 0])
+    rotate(slab2, slab2.cell[0], (0,1,0), slab2.cell[1], (1,0,0))
+    slab180 = stack(slab1, slab2, axis=2, maxstrain=None)
+    os.makedirs(os.path.join(current_path, 'Pnma'))
+    slab180.write(os.path.join(current_path, 'Pnma', 'FE_DW.vasp'), sort=True, vasp5=True)
+    slab1.write(os.path.join(current_path, 'Pnma', 'D1.vasp'), sort=True, vasp5=True)
+    slab2.write(os.path.join(current_path, 'Pnma', 'D2.vasp'), sort=True, vasp5=True)
+    print("Domain 1 Orientation (R180 DW): a = [1, 1, 0), b = [0, 0, 1], c = (1, -1, 0)")
+    print("Domain 2 Orientation (R180 DW): a = [-1, 1, 0), b = [0, 0, 1], c = (1, 1, 0)")
+    print("\033[1;31;40mWarning: This code might create domain wall artifacts, like missing or duplicate atoms, at the domain wall. Therefore, manual adjustment may be needed.\033[0m")
+
+    
+# Manually develop interfaces/DW if you have ORs
+if system_selection == 6:
     def create_domain_wall(filename1, filename2, domain_size):
 
     # Find the path of the current directory
      current_path = os.getcwd()
 
-    filename1 = input("Enter the input domain1 file name (with extension): ")
     filename2 = input("Enter the input domain2 file name (with extension): ")
 
     # Read the input file
-    D1 = ase.io.read(filename1)
     D2 = ase.io.read(filename2)
 
     def get_too_close(atoms, cutoff):
@@ -424,5 +468,4 @@ if system_selection == 5:
     print ('strain along b (%):', (norm(b1) - norm(b2)) / norm(b2) * 100.)
     print ('strain along c (%):', (norm(c1) - norm(c2)) / norm(c2) * 100.)
     print("\033[1;31;40mWarning: This code could generate interface/domain wall artifacts (i.e., Oxygen atoms, duplicate atoms etc,) at the interface, thus it requires manual adjustment.\033[0m")
-
 
