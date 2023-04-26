@@ -2,7 +2,8 @@
 Ferroelectric/ferroelastic domain_wall_builder creates domain walls and interface structure for the perovskites and ceramics. The code reads the structure in the vasp format, and then creates domain walls with user-defined sizes and angles.
 
 # Overview
-There are two main scripts [dwbuilder.py_](./dwbuilder.py) and [dbuilder.py_](./dbuilder.py) which build domain wall and single domain structures, respectively. For the domain wall and interfaces, you only need to run [dwbuilder.py_](./dwbuilder.py). These scripts can be executed from the command line. I also have included examples of ferroelectric domain walls.  
+There are three main scripts [dwbuilder.py](./dwbuilder.py), [dbuilder.py](./dbuilder.py) and [hibuilder.py](./hibuilder.py) which build domain wall, single domain structures and experimentally observed atomic interface strutures with known orientation relationships (ORs), respectively. For the domain wall and interfaces, you only need to run [dwbuilder.py](./dwbuilder.py). These scripts can be executed from the command line. I also have included examples of ferroelectric domain walls.
+
 # Installation guide
 For installation simply clone or download the code in your terminal and in the main directory of the package type:
 ```
