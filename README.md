@@ -55,33 +55,6 @@ In this example, I have reproduced an orientation relationship reported in the f
 
 ![hibuilder](https://user-images.githubusercontent.com/52278972/235938564-5fb21315-a334-4754-ac1c-395b5daffc8f.png)
 
-```
-Enter the bulk phase 1file name (with extension):  Fe2AL5.vasp
-Enter the bulk phase 2 file name (with extension):  Fe_unitcell.vasp
-Bulk phase 1 Space group number: 11
-Bulk phase 1 International symbol: P2_1/m
-Bulk phase 1 Lattice type: monoclinic
-Bulk phase 2 Space group number: 229
-Bulk phase 2 International symbol: Im-3m
-Bulk phase 2 Lattice type: cubic
-Enter three comma-separated values for bulk 1 lattice direction a:  0,0,-1
-Enter three comma-separated values for bulk 1 lattice direction b:  1,0,0
-Enter three comma-separated values for bulk 1 lattice direction c:  0,-2,0
-Enter three comma-separated values for bulk 2 lattice direction a:  1,0,1
-Enter three comma-separated values for bulk 2 lattice direction b:  1.5,1.5,-1.5
-Enter three comma-separated values for bulk 2 lattice direction c:  -2,4,2
-Enter the stacking direction 0 for a, 1 for b and 2 for c):  2
-strain along a (%): 1.1359194596826545
-strain along b (%): -0.5492880653029563
-strain along c (%): -8.125507139329438
-Angular strain along a (radians): 0.0
-Angular strain along b (radians): 0.0
-Angular strain along c (radians): 0.0
-Warning: This code could generate interface/domain wall artifacts (i.e., Oxygen atoms, duplicate atoms etc,) at the interface, thus it requires manual adjustment.
-# Questions/Contributions
-If you have any questions, or raise an issue contact [me](mailto:muhammad.z.khalid@ntnu.no).
-This project is currently under development. 
-```
 # License
 [MIT](./LICENSE).  
 
