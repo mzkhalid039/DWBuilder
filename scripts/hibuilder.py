@@ -11,8 +11,8 @@ from pymatgen.core.structure import Structure
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 
 
-filename1 = input("Enter the bulk file name (with extension): ")
-filename2 = input("Enter the bulk file name (with extension): ")
+filename1 = input("Enter the bulk phase 1file name (with extension): ")
+filename2 = input("Enter the bulk phase 2 file name (with extension): ")
 
 
 # Read the input file
@@ -85,12 +85,11 @@ slab2.write(os.path.join(current_path, 'HIS', 'bulk2.vasp'), sort=True, vasp5=Tr
 interface_direction = int(input("Enter the stacking direction 0 for a, 1 for b and 2 for c): "))
 
 slab = stack(slab1, slab2, axis=interface_direction, maxstrain=None)
-slab.write(os.path.join(current_path, 'Misc', 'Misc_interface.vasp'), sort=True, vasp5=True)
+slab.write(os.path.join(current_path, 'HIS', 'interface.vasp'), sort=True, vasp5=True)
     
 
 slab.write('H-interface.vasp', sort=True, vasp5=True)
 
-print("\033[1;31;40mWarning: This code might create domain wall artifacts, like missing or duplicate atoms, at the domain wall. Therefore, manual adjustment may be needed.\033[0m")
 
 # Calculate lattice strain
 
