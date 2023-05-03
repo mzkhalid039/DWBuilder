@@ -14,6 +14,7 @@ This will copy the modules to your active python site-packages, thereby making t
 # Usage
 To execute the code, one should run the dwbuilder command from the command line. Upon running, the user will be prompted to input the name of the input structure file, as well as the domain wall angle and size (expressed in number of unit cells). This script builds the domain wall structure based on the space group of the input structure. For structures with the R3m or P4mm space groups, the polarization directions are assumed to align with the [001] direction. For structures with the R3c space group, a pseudo-cubic structure is first constructed by translating the input rhombohedral axes along ```a=[101], b=[-111], and c=[0-11]```. In the translated axis , the polarization direction is assumed to align with the ```[-110]``` direction. To construct 109 and 71 domain walls, each crystal system is translated according to specific orientation relationships in order to meet the polarization angle requirement.
 
+## Example of using [dwbuilder.py](./dwbuilder.py)
 _ex:_
 
 ```
@@ -49,10 +50,38 @@ a x c = b
 b x c = a
 ```
 
+## Example of using [hibuilder.py](./hibuilder.py)
+In this example, I have reproduced an orientation relationship reported in the following article [CMS](https://www.sciencedirect.com/science/article/pii/S0927025621000446). 
+
+![hibuilder](https://user-images.githubusercontent.com/52278972/235938564-5fb21315-a334-4754-ac1c-395b5daffc8f.png)
+
+```
+Enter the bulk phase 1file name (with extension):  Fe2AL5.vasp
+Enter the bulk phase 2 file name (with extension):  Fe_unitcell.vasp
+Bulk phase 1 Space group number: 11
+Bulk phase 1 International symbol: P2_1/m
+Bulk phase 1 Lattice type: monoclinic
+Bulk phase 2 Space group number: 229
+Bulk phase 2 International symbol: Im-3m
+Bulk phase 2 Lattice type: cubic
+Enter three comma-separated values for bulk 1 lattice direction a:  0,0,-1
+Enter three comma-separated values for bulk 1 lattice direction b:  1,0,0
+Enter three comma-separated values for bulk 1 lattice direction c:  0,-2,0
+Enter three comma-separated values for bulk 2 lattice direction a:  1,0,1
+Enter three comma-separated values for bulk 2 lattice direction b:  1.5,1.5,-1.5
+Enter three comma-separated values for bulk 2 lattice direction c:  -2,4,2
+Enter the stacking direction 0 for a, 1 for b and 2 for c):  2
+strain along a (%): 1.1359194596826545
+strain along b (%): -0.5492880653029563
+strain along c (%): -8.125507139329438
+Angular strain along a (radians): 0.0
+Angular strain along b (radians): 0.0
+Angular strain along c (radians): 0.0
+Warning: This code could generate interface/domain wall artifacts (i.e., Oxygen atoms, duplicate atoms etc,) at the interface, thus it requires manual adjustment.
 # Questions/Contributions
 If you have any questions, or raise an issue contact [me](mailto:muhammad.z.khalid@ntnu.no).
 This project is currently under development. 
-
+```
 # License
 [MIT](./LICENSE).  
 
