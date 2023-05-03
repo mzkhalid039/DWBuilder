@@ -33,6 +33,8 @@ a x b = c
 a x c = b
 b x c = a
 ```
+This script generates an initial configuration that needs additional refinement along a, b and c-directions. To determine the optimal interface distance along the a, b, and c axes, you can either perform static DFT or forcefield simulations. Additionally, you may need to explore various interfacial configurations to identify the thermodynamically stable structure.
+
 # License
 [MIT](./LICENSE).  
 
