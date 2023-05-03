@@ -42,19 +42,20 @@ Enter size of supercell (in number of unit cells):  1
 Domain wall structures and supercells created successfully!
 ```
 
-Once you have developed the desired domain wall structure, you can visualize in vesta or ase to further refine domain wall artifacts.  In the above examples, the domain walls are parallel along (001)//(001) planes. It is also important to know that all the domain wall contrusted in this package follow the orthogonality  condition, which means lattice vectors a,b and c are mutually perpendicular (i.e., orthognal) to each other and fulfill these conditions: 
-
-```
-a x b = c
-a x c = b
-b x c = a
-```
+Once you have developed the desired domain wall structure, you can visualize in vesta or ase to further refine domain wall artifacts.  In the above examples, the domain walls are parallel along (001)//(001) planes. 
 
 ## Example of using [hibuilder.py](./hibuilder.py)
 In this example, I have reproduced an orientation relationship reported in the following article [CMS](https://www.sciencedirect.com/science/article/pii/S0927025621000446). 
 
 ![hibuilder](https://user-images.githubusercontent.com/52278972/235938564-5fb21315-a334-4754-ac1c-395b5daffc8f.png)
 
+It is also important to know that all the domain wall and interface structures built in this package follow the orthogonality  condition, which means lattice vectors a,b and c are mutually perpendicular (i.e., orthognal) to each other and fulfill these conditions: 
+
+```
+a x b = c
+a x c = b
+b x c = a
+```
 # License
 [MIT](./LICENSE).  
 
