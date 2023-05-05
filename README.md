@@ -33,6 +33,17 @@ a x b = c
 a x c = b
 b x c = a
 ```
+So far the [dwbuilder.py](scripts/dwbuilder.py) develops the domain walls for the following space groups along with the assumed polarization directions:
+
+```
+R3c (Polarization direction (1-11))
+R3m (Polarization direction (001))
+P4mm (Polarization direction (001))
+p6_3cm (Polarization direction (-1-10))
+Pnma (Polarization direction (110))
+Pmc2_1 (user-defined)
+```
+
 This script generates an initial configuration that needs additional refinement along a, b and c-directions. To determine the optimal interface distance along the a, b, and c axes, you can either perform static DFT or forcefield simulations. Additionally, you may need to explore various interfacial configurations to identify the thermodynamically stable structure.
 
 # Questions/Contributions
