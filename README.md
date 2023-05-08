@@ -41,7 +41,8 @@ R3m (Polarization direction (001))
 P4mm (Polarization direction (001))
 p6_3cm (Polarization direction (-1-10))
 Pnma (Polarization direction (110))
-Pmc2_1/Amm2 (user-defined)
+Pmc2_1 (user-defined)
+Amm2 (user-defined)
 ```
 
 This script generates an initial configuration that needs additional refinement along a, b and c-directions. To determine the optimal interface distance along the a, b, and c axes, you can either perform static DFT or forcefield simulations. Additionally, you may need to explore various interfacial configurations to identify the thermodynamically stable structure.
