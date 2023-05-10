@@ -98,6 +98,14 @@ if system_selection == 1:
         print("Domain 1 Orientation (109 DW): a = [0, 1, 0), b = [1, 0, 0], c = (0, 0, 1)")
         print("Domain 2 Orientation (109 DW): a = [0, -1, 0), b = [-1, 0, 0], c = (0, 0, 1)")
         print("\033[1;31;40mWarning: This code might create domain wall artifacts, like missing or duplicate atoms, at the domain wall. Therefore, manual adjustment may be needed.\033[0m")
+        
+        #Calculatue lattice strain
+        a1, b1, c1 = slab1.cell
+        a2, b2, c2 = slab2.cell
+
+        print ('strain along a (%):', (norm(a1) - norm(a2)) / norm(a2) * 100.)
+        print ('strain along b (%):', (norm(b1) - norm(b2)) / norm(b2) * 100.)
+        print ('strain along c (%):', (norm(c1) - norm(c2)) / norm(c2) * 100.)
 
     if angle_selection == 2 or angle_selection == 4:
         slab1 = cut(BFO, a=[1, -1, 0], b=[0, 0, 1], c=[domain_size, domain_size, 0])
@@ -112,6 +120,14 @@ if system_selection == 1:
         print("Domain 1 Orientation (71 DW): a = [1, -1, 0), b = [0, 0, 1], c = (1, 1, 0)")
         print("Domain 2 Orientation (71 DW): a = [-1, 1, 0), b = [0, 0, -1], c = (1, 1, 0)")
         print("\033[1;31;40mWarning: This code might create domain wall artifacts, like missing or duplicate atoms, at the domain wall. Therefore, manual adjustment may be needed.\033[0m")
+       
+        #Calculatue lattice strain
+        a1, b1, c1 = slab1.cell
+        a2, b2, c2 = slab2.cell
+
+        print ('strain along a (%):', (norm(a1) - norm(a2)) / norm(a2) * 100.)
+        print ('strain along b (%):', (norm(b1) - norm(b2)) / norm(b2) * 100.)
+        print ('strain along c (%):', (norm(c1) - norm(c2)) / norm(c2) * 100.)
 
 
     if angle_selection == 3 or angle_selection == 4:
@@ -127,6 +143,14 @@ if system_selection == 1:
         print("Domain 1 Orientation (180 DW): a = [1, 1, 0), b = [0, 0, -1], c = (-1, 1, 0)")
         print("Domain2 Orientation (180 DW): a = [-1, -1, 0), b = [0, 0, -1], c = (-1, 1, 0)")
         print("\033[1;31;40mWarning: This code might create domain wall artifacts, like missing or duplicate atoms, at the domain wall. Therefore, manual adjustment may be needed.\033[0m")
+
+         #Calculatue lattice strain
+        a1, b1, c1 = slab1.cell
+        a2, b2, c2 = slab2.cell
+
+        print ('strain along a (%):', (norm(a1) - norm(a2)) / norm(a2) * 100.)
+        print ('strain along b (%):', (norm(b1) - norm(b2)) / norm(b2) * 100.)
+        print ('strain along c (%):', (norm(c1) - norm(c2)) / norm(c2) * 100.)
 
         
         # Create supercells of the domain walls
@@ -184,7 +208,14 @@ if system_selection == 2:
         print("Domain 2 Orientation (R180 DW): a = [-1, -1, 0), b = [0, 0, -1], c = (1, -1, 0)")
         print("\033[1;31;40mWarning: This code might create domain wall artifacts, like missing or duplicate atoms, at the domain wall. Therefore, manual adjustment may be needed.\033[0m")
 
-    
+        #Calculatue lattice strain
+        a1, b1, c1 = slab1.cell
+        a2, b2, c2 = slab2.cell
+
+        print ('strain along a (%):', (norm(a1) - norm(a2)) / norm(a2) * 100.)
+        print ('strain along b (%):', (norm(b1) - norm(b2)) / norm(b2) * 100.)
+        print ('strain along c (%):', (norm(c1) - norm(c2)) / norm(c2) * 100.)
+
     if angle_selection == 2 or angle_selection == 4:
         slab1 = cut(D1, a=[domain_size, domain_size, 0], b=[0, 0, 1], c=[1, -1, 0])
         rotate(slab1, slab1.cell[0], (0,1,0), slab1.cell[1], (1,0,0))
@@ -199,6 +230,13 @@ if system_selection == 2:
         print("Domain 2 Orientation (R71 DW): a = (1, 1, 0), b = [0, 0, -1], c = [-1, 1, 0]")
         print("\033[1;31;40mWarning: This code might create domain wall artifacts, like missing or duplicate atoms, at the domain wall. Therefore, manual adjustment may be needed.\033[0m")
 
+        #Calculatue lattice strain
+        a1, b1, c1 = slab1.cell
+        a2, b2, c2 = slab2.cell
+
+        print ('strain along a (%):', (norm(a1) - norm(a2)) / norm(a2) * 100.)
+        print ('strain along b (%):', (norm(b1) - norm(b2)) / norm(b2) * 100.)
+        print ('strain along c (%):', (norm(c1) - norm(c2)) / norm(c2) * 100.)
 
 
     if angle_selection == 3 or angle_selection == 4:
@@ -215,6 +253,13 @@ if system_selection == 2:
         print("Domain 2 Orientation (R109 DW): a = (1, 0, 0), b = [0, -1, 0], c = [0, 0, -1]")
         print("\033[1;31;40mWarning: This code might create domain wall artifacts, like missing or duplicate atoms, at the domain wall. Therefore, manual adjustment may be needed.\033[0m")
 
+        #Calculatue lattice strain
+        a1, b1, c1 = slab1.cell
+        a2, b2, c2 = slab2.cell
+
+        print ('strain along a (%):', (norm(a1) - norm(a2)) / norm(a2) * 100.)
+        print ('strain along b (%):', (norm(b1) - norm(b2)) / norm(b2) * 100.)
+        print ('strain along c (%):', (norm(c1) - norm(c2)) / norm(c2) * 100.)
 
 
     # Create supercells of the domain walls
@@ -267,7 +312,14 @@ if system_selection == 3:
         print("Domain 2 Orientation (T180 DW): a = [-1, 0, 0], b = (0, 1, 0), c = [0, 0, -1]")
         print("\033[1;31;40mWarning: This code might create domain wall artifacts, like missing or duplicate atoms, at the domain wall. Therefore, manual adjustment may be needed.\033[0m")
 
-    
+         #Calculatue lattice strain
+        a1, b1, c1 = slab1.cell
+        a2, b2, c2 = slab2.cell
+
+        print ('strain along a (%):', (norm(a1) - norm(a2)) / norm(a2) * 100.)
+        print ('strain along b (%):', (norm(b1) - norm(b2)) / norm(b2) * 100.)
+        print ('strain along c (%):', (norm(c1) - norm(c2)) / norm(c2) * 100.)
+   
     if angle_selection == 2 or angle_selection == 3:
         slab1 = cut(D1, a=[0, 1, 0], b=[-1, 0, 1], c=[domain_size, 0, domain_size])
         rotate(slab1, slab1.cell[0], (0,1,0), slab1.cell[1], (1,0,0))
@@ -282,6 +334,13 @@ if system_selection == 3:
         print("Domain 2 Orientation (T90 DW): a = [0, -1, 0], b = [1, 0, -1], c = (1, 0, 1)")
         print("\033[1;31;40mWarning: This code might create domain wall artifacts, like missing or duplicate atoms, at the domain wall. Therefore, manual adjustment may be needed.\033[0m")
 
+        #Calculatue lattice strain
+        a1, b1, c1 = slab1.cell
+        a2, b2, c2 = slab2.cell
+
+        print ('strain along a (%):', (norm(a1) - norm(a2)) / norm(a2) * 100.)
+        print ('strain along b (%):', (norm(b1) - norm(b2)) / norm(b2) * 100.)
+        print ('strain along c (%):', (norm(c1) - norm(c2)) / norm(c2) * 100.)
 
     # Create supercells of the domain walls
 
@@ -339,6 +398,14 @@ if system_selection == 4:
         slab2.write(os.path.join(current_path, 'NDW', 'domain2.vasp'), sort=True, vasp5=True)
         print("\033[1;31;40mWarning: This code might create domain wall artifacts, like missing or duplicate atoms, at the domain wall. Therefore, manual adjustment may be needed.\033[0m")
         print("NDW Orientation: a = (-1, 1, 0), b = [0, 0, 1], c = [-1, -1, 0]")
+       
+        #Calculatue lattice strain
+        a1, b1, c1 = slab1.cell
+        a2, b2, c2 = slab2.cell
+
+        print ('strain along a (%):', (norm(a1) - norm(a2)) / norm(a2) * 100.)
+        print ('strain along b (%):', (norm(b1) - norm(b2)) / norm(b2) * 100.)
+        print ('strain along c (%):', (norm(c1) - norm(c2)) / norm(c2) * 100.)
 
     if angle_selection == 2 or angle_selection == 3:
         slab1 = cut(YMO1, a=[-1, 1, 0], b=[0.0, 0.0, domain_size+0.01], c=[-1.0, -1.0, 0])
@@ -353,6 +420,15 @@ if system_selection == 4:
         print("CDW Orientation: a = [-1, 1, 0], b = (0, 0, 1), c = [-1, -1, 0]")
 
         print("\033[1;31;40mWarning: This code might create domain wall artifacts, like missing or duplicate atoms, at the domain wall. Therefore, manual adjustment may be needed.\033[0m")
+   
+        #Calculatue lattice strain
+        a1, b1, c1 = slab1.cell
+        a2, b2, c2 = slab2.cell
+
+        print ('strain along a (%):', (norm(a1) - norm(a2)) / norm(a2) * 100.)
+        print ('strain along b (%):', (norm(b1) - norm(b2)) / norm(b2) * 100.)
+        print ('strain along c (%):', (norm(c1) - norm(c2)) / norm(c2) * 100.)
+
     # Create supercells of the domain walls
 
     supercell_size = int(input("Enter size of supercell (in number of unit cells): "))
@@ -395,6 +471,14 @@ if system_selection == 5:
     print("Domain 2 Orientation (R180 DW): a = [-1, 1, 0), b = [0, 0, 1], c = (1, 1, 0)")
     print("\033[1;31;40mWarning: This code might create domain wall artifacts, like missing or duplicate atoms, at the domain wall. Therefore, manual adjustment may be needed.\033[0m")
 
+        #Calculatue lattice strain
+        a1, b1, c1 = slab1.cell
+        a2, b2, c2 = slab2.cell
+
+        print ('strain along a (%):', (norm(a1) - norm(a2)) / norm(a2) * 100.)
+        print ('strain along b (%):', (norm(b1) - norm(b2)) / norm(b2) * 100.)
+        print ('strain along c (%):', (norm(c1) - norm(c2)) / norm(c2) * 100.)
+    
     # Create supercells of the domain walls
 
     supercell_size = int(input("Enter size of supercell (in number of unit cells): "))
@@ -525,6 +609,13 @@ if system_selection == 6:
 
         print("\033[1;31;40mWarning: This code generates duplicate atoms at the domain wall, use VESTA to remove duplicated or closer atoms (with 0.5Å cuttoff).\033[0m")
 
+        #Calculatue lattice strain
+        a1, b1, c1 = slab1.cell
+        a2, b2, c2 = slab2.cell
+
+        print ('strain along a (%):', (norm(a1) - norm(a2)) / norm(a2) * 100.)
+        print ('strain along b (%):', (norm(b1) - norm(b2)) / norm(b2) * 100.)
+        print ('strain along c (%):', (norm(c1) - norm(c2)) / norm(c2) * 100.)
 
 
     if angle_selection == 2 or angle_selection == 4:
@@ -566,7 +657,15 @@ if system_selection == 6:
 
 
         print("\033[1;31;40mCaution: It is always best practice to visualize structure.\033[0m")
-   
+        
+        #Calculatue lattice strain
+        a1, b1, c1 = slab1.cell
+        a2, b2, c2 = slab2.cell
+
+        print ('strain along a (%):', (norm(a1) - norm(a2)) / norm(a2) * 100.)
+        print ('strain along b (%):', (norm(b1) - norm(b2)) / norm(b2) * 100.)
+        print ('strain along c (%):', (norm(c1) - norm(c2)) / norm(c2) * 100.)
+
     if angle_selection == 3 or angle_selection == 4:
     #90 DW 
 
@@ -604,9 +703,15 @@ if system_selection == 6:
         slab2.write(os.path.join(current_path, 'O90', 'D1_90.vasp'), sort=True, vasp5=True)
         slab3.write(os.path.join(current_path, 'O90', 'D2_90.vasp'), sort=True, vasp5=True)
 
-
-
         print("\033[1;31;40mCaution: It is always best practice to visualize structure.\033[0m")
+        
+        #Calculatue lattice strain
+        a1, b1, c1 = slab1.cell
+        a2, b2, c2 = slab2.cell
+
+        print ('strain along a (%):', (norm(a1) - norm(a2)) / norm(a2) * 100.)
+        print ('strain along b (%):', (norm(b1) - norm(b2)) / norm(b2) * 100.)
+        print ('strain along c (%):', (norm(c1) - norm(c2)) / norm(c2) * 100.)
 
         supercell_size = int(input("Enter size of supercell (in number of unit cells): "))
         if angle_selection == 1 or angle_selection == 4:
