@@ -26,6 +26,8 @@ In this example, I have reproduced an orientation relationship reported in the f
 
 ![hibuilder](https://user-images.githubusercontent.com/52278972/235938564-5fb21315-a334-4754-ac1c-395b5daffc8f.png)
 
+[hibuilder.py](scripts/hibuilder.py) generates an initial configuration that needs additional refinement along a, b and c-directions. To determine the optimal interface distance along the a, b, and c axes, you can either perform static DFT or forcefield simulations. Additionally, you may need to explore various interfacial configurations to identify the thermodynamically stable structure.
+
 It is also important to know that all the domain wall and interface structures built in this package follow the orthogonality  condition, which means lattice vectors a,b and c are mutually perpendicular (i.e., orthognal) to each other and fulfill these conditions: 
 
 ```
@@ -45,7 +47,6 @@ Pmc2_1 (user-defined)
 Amm2 (user-defined)
 ```
 
-This script generates an initial configuration that needs additional refinement along a, b and c-directions. To determine the optimal interface distance along the a, b, and c axes, you can either perform static DFT or forcefield simulations. Additionally, you may need to explore various interfacial configurations to identify the thermodynamically stable structure.
 
 # Questions/Contributions
 If you have any questions, find an issue you can get in contact with [me](mailto:zeeshan.khalid039@gmail.com).
