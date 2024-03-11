@@ -50,7 +50,7 @@ Amm2 (user-defined)
 
 # Questions/Contributions
 If you have any questions, find an issue you can get in contact with [me](mailto:zeeshan.khalid039@gmail.com).
-This project is currently under development. 
+
 
 # License
 [MIT](./LICENSE).  
