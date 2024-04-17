@@ -2,10 +2,10 @@ from setuptools import setup, find_packages
 from os.path import abspath, dirname
 
 setup(
-    name='DWBuilder',
+    name='dwbuilder',
     version='1.0.0',
     author='M.Z.Khalid',
-    author_email='muhammad.z.khalid@ntnu.no',
+    author_email='zeeshan.khalid039@gmail.com',
     description='A package for developing domain wall structures for atomistic calculations',
     license='MIT',
     packages=find_packages(),
@@ -14,6 +14,8 @@ setup(
         'console_scripts': [
             'dwbuilder = scripts.dwbuilder:main',
             'dbuilder = scripts.dbuilder:main',
+            'hibuilder = scripts.hibuilder:main',
+
         ]
     }
 )
