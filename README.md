@@ -27,7 +27,7 @@ To execute the code, one should run the dwbuilder command from the command line.
 _ex:_
 
 ```
-Enter the input file name (with extension): CONTCAR
+Enter the input file name (with extension): BiFeO3.vasp
 Space group number: 161
 International symbol: R3c
 Lattice type: rhombohedral
