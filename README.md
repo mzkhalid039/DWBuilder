@@ -64,6 +64,30 @@ Once you have developed the desired domain wall structure, you can visualize in 
 ## Example of using [hibuilder.py](scripts/hibuilder.py)
 In this example, I have reproduced an orientation relationship reported in the following article [CMS](https://www.sciencedirect.com/science/article/pii/S0927025621000446). 
 
+```
+Enter the bulk phase 1file name (with extension): Fe_unitcell.vasp
+Enter the bulk phase 2 file name (with extension): Fe2Al5.vasp
+Bulk phase 1 Space group number: 229
+Bulk phase 1 International symbol: lm-3m
+Bulk phase 1 Lattice type: cubic
+Bulk phase 2 Space group number: 63
+Bulk phase 2 International symbol: Cmcm
+Bulk phase 2 Lattice type: orthrhombic
+Enter three comma-separated values for bulk 1 lattice direction a: 1,0,1
+Enter three comma-separated values for bulk 1 lattice direction b: 1.5,1.5,-1.5
+Enter three comma-separated values for bulk 1 lattice direction c: -2,4,2
+Enter three comma-separated values for bulk 2 lattice direction a: 0,0,-1
+Enter three comma-separated values for bulk 2 lattice direction b: 1,0,0
+Enter three comma-separated values for bulk 2 lattice direction c: 0,-2,0
+Enter the stacking direction 0 for a, 1 for b and 2 for c): 2
+strain along a (%): 0.23785650028476918
+strain along b (%): 0.23785650028478483
+strain along c (%): 0.23785650028476912
+Angular strain along a (radians): 0.0
+Angular strain along b (radians): 0.0004954757074125717
+Angular strain along c (radians): 0.0005235846649382194
+Warning: This code could generate interface/domain wall artifacts (i.e., Oxygen atoms, duplicate atoms etc,) at the interface, thus it requires manual adjustment.
+```
 ![hibuilder](https://user-images.githubusercontent.com/52278972/235938564-5fb21315-a334-4754-ac1c-395b5daffc8f.png)
 
 [hibuilder.py](scripts/hibuilder.py) generates an initial configuration that needs additional refinement along a, b and c-directions. To determine the optimal interface distance along the a, b, and c axes, you can either perform static DFT or forcefield simulations. Additionally, you may need to explore various interfacial configurations to identify the thermodynamically stable structure.
