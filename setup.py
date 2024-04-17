@@ -3,7 +3,7 @@ from os.path import abspath, dirname
 
 setup(
     name='dwbuilder',
-    version='1.0.0',
+    version='1.1.0',
     author='M.Z.Khalid',
     author_email='zeeshan.khalid039@gmail.com',
     description='A package for developing domain wall structures for atomistic calculations',
