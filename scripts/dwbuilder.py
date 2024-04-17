@@ -471,13 +471,13 @@ if system_selection == 5:
     print("Domain 2 Orientation (R180 DW): a = [-1, 1, 0), b = [0, 0, 1], c = (1, 1, 0)")
     print("\033[1;31;40mWarning: This code might create domain wall artifacts, like missing or duplicate atoms, at the domain wall. Therefore, manual adjustment may be needed.\033[0m")
 
-        #Calculatue lattice strain
-        a1, b1, c1 = slab1.cell
-        a2, b2, c2 = slab2.cell
+    #Calculatue lattice strain
+    a1, b1, c1 = slab1.cell
+    a2, b2, c2 = slab2.cell
 
-        print ('strain along a (%):', (norm(a1) - norm(a2)) / norm(a2) * 100.)
-        print ('strain along b (%):', (norm(b1) - norm(b2)) / norm(b2) * 100.)
-        print ('strain along c (%):', (norm(c1) - norm(c2)) / norm(c2) * 100.)
+    print ('strain along a (%):', (norm(a1) - norm(a2)) / norm(a2) * 100.)
+    print ('strain along b (%):', (norm(b1) - norm(b2)) / norm(b2) * 100.)
+    print ('strain along c (%):', (norm(c1) - norm(c2)) / norm(c2) * 100.)
     
     # Create supercells of the domain walls
 
