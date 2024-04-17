@@ -80,16 +80,14 @@ Enter three comma-separated values for bulk 2 lattice direction a: 0,0,-1
 Enter three comma-separated values for bulk 2 lattice direction b: 1,0,0
 Enter three comma-separated values for bulk 2 lattice direction c: 0,-2,0
 Enter the stacking direction 0 for a, 1 for b and 2 for c): 2
-strain along a (%): 1.13785650028476918
-strain along b (%): 0.54
-strain along c (%): 8.23785650028476912
+strain along a (%): 1.1378
+strain along b (%): -0.5492
+strain along c (%): 8.2378
 Angular strain along a (radians): 0.0
-Angular strain along b (radians): 0.0004954757074125717
+Angular strain along b (radians): 0.0
 Angular strain along c (radians): 0.0
 Warning: This code could generate interface/domain wall artifacts (i.e., Oxygen atoms, duplicate atoms etc,) at the interface, thus it requires manual adjustment.
 ```
-![hibuilder](https://user-images.githubusercontent.com/52278972/235938564-5fb21315-a334-4754-ac1c-395b5daffc8f.png)
-
 [hibuilder.py](scripts/hibuilder.py) generates an initial configuration that needs additional refinement along a, b and c-directions. To determine the optimal interface distance along the a, b, and c axes, you can either perform static DFT or forcefield simulations. Additionally, you may need to explore various interfacial configurations to identify the thermodynamically stable structure.
 
 It is also important to know that all the domain wall and interface structures built in this package follow the orthogonality  condition, which means lattice vectors a,b and c are mutually perpendicular (i.e., orthognal) to each other and fulfill these conditions: 
