@@ -80,12 +80,12 @@ Enter three comma-separated values for bulk 2 lattice direction a: 0,0,-1
 Enter three comma-separated values for bulk 2 lattice direction b: 1,0,0
 Enter three comma-separated values for bulk 2 lattice direction c: 0,-2,0
 Enter the stacking direction 0 for a, 1 for b and 2 for c): 2
-strain along a (%): 0.23785650028476918
-strain along b (%): 0.23785650028478483
-strain along c (%): 0.23785650028476912
+strain along a (%): 1.13785650028476918
+strain along b (%): 0.54
+strain along c (%): 8.23785650028476912
 Angular strain along a (radians): 0.0
 Angular strain along b (radians): 0.0004954757074125717
-Angular strain along c (radians): 0.0005235846649382194
+Angular strain along c (radians): 0.0
 Warning: This code could generate interface/domain wall artifacts (i.e., Oxygen atoms, duplicate atoms etc,) at the interface, thus it requires manual adjustment.
 ```
 ![hibuilder](https://user-images.githubusercontent.com/52278972/235938564-5fb21315-a334-4754-ac1c-395b5daffc8f.png)
