@@ -103,6 +103,10 @@ Warning: This code could generate interface/domain wall artifacts (i.e., Oxygen 
 ```
 [hibuilder.py](scripts/hibuilder.py) generates an initial configuration that needs additional refinement along a, b and c-directions. To determine the optimal interface distance along the a, b, and c axes, you can either perform static DFT or forcefield simulations. Additionally, you may need to explore various interfacial configurations to identify the thermodynamically stable structure.
 
+The above code generates the following interface structure (the periodic image):
+
+![image](https://github.com/mzkhalid039/DWBuilder/assets/52278972/19081982-1949-4e16-a734-ca27a6d733bb)
+
 It is also important to know that all the domain wall and interface structures built in this package follow the orthogonality  condition, which means lattice vectors a,b and c are mutually perpendicular (i.e., orthognal) to each other and fulfill these conditions: 
 
 ```
