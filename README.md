@@ -103,11 +103,11 @@ Warning: This code could generate interface/domain wall artifacts (i.e., Oxygen 
 ```
 [hibuilder.py](scripts/hibuilder.py) generates an initial configuration that needs additional refinement along a, b and c-directions. To determine the optimal interface distance along the a, b, and c axes, you can either perform static DFT or forcefield simulations. Additionally, you may need to explore various interfacial configurations to identify the thermodynamically stable structure.
 
-The above code generates the following interface structure (the periodic image):
+The above code generates the following interface structure (the periodic image) visualized by [VESTA](https://jp-minerals.org/vesta/en/):
 
 ![image](https://github.com/mzkhalid039/DWBuilder/assets/52278972/19081982-1949-4e16-a734-ca27a6d733bb)
 
-It is also important to know that all the domain wall and interface structures built in this package follow the orthogonality  condition, which means lattice vectors a,b and c are mutually perpendicular (i.e., orthognal) to each other and fulfill these conditions: 
+It is also important to know that all the domain wall and interface structures built in this package follow the orthogonality condition, which means lattice vectors a,b and c are mutually perpendicular (i.e., orthognal) to each other and fulfill these conditions: 
 
 ```
 a x b = c
@@ -115,6 +115,13 @@ a x c = b
 b x c = a
 ```
 
+- _**A note on the microscopic degrees of freedom:**_
+
+To find the global minimum of an interface structure, it is essential to calculate the optimal distance between the different bulk phases at the interface. You also need to identify the termination site that corresponds to the structure with the lowest energy, as well as consider the homogeneous interface structures of the periodic images.
+
+To achieve these goals, I often use first-principles methods such as density functional theory (DFT), specifically with the Vienna Ab-initio Simulation Package [VASP](https://www.vasp.at/) at 0 Kelvin. This computational approach helps determine the initial structures for further first-principles calculations. You can find more information on this interface in the following paper:
+
+- Khalid MZ, Friis J, Ninive PH, Marthinsen K, Ringdalen IG, Strandlie A. First-principles study of tensile and shear strength of an Fe2Al5//Fe interface. Computational Materials Science. 2021 May 1;192:110319 [https://doi.org/10.1016/j.commatsci.2021.110319](https://doi.org/10.1016/j.commatsci.2021.110319).
 
 # Questions/Contributions
 If you have any questions, find an issue you can get in contact with [me](mailto:zeeshan.khalid039@gmail.com).
