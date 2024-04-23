@@ -35,7 +35,7 @@ Currently, the script cannot predict the ORs that would result in a low lattice 
 
  
 ### Statement of need:
-``DWBuilder`` iis an interactive toolbox for developing atomic domain walls and interface structures in homogeneous and heterogeneous material compounds, making it suitable for high-throughput calculations. Its target audience includes students and scientists in materials science and physics at any level of expertise. "DWBuilder" utilizes the NumPy library extensively, which speeds up execution, particularly when working with large structures. Users are guided through the process of identifying and creating the desired domain walls in a step-by-step manner. The code is designed to be user-friendly and educational, with a focus on plane orientation and electric polarization switching.
+``DWBuilder`` iis an interactive toolbox for developing atomic domain walls and interface structures in homogeneous and heterogeneous material compounds, making it suitable for high-throughput calculations. Its target audience includes students and scientists in materials science and physics at any level of expertise. ''DWBuilder'' utilizes the NumPy library extensively, which speeds up execution, particularly when working with large structures. Users are guided through the process of identifying and creating the desired domain walls in a step-by-step manner. The code is designed to be user-friendly and educational, with a focus on plane orientation and electric polarization switching.
 
 
 # Acknowledgements
