@@ -12,6 +12,8 @@ The package requires:
 -  **numpy** - http://www.numpy.org/
 -  **metplotlib** - https://matplotlib.org/
 -  **ASE** - https://wiki.fysik.dtu.dk/ase/
+-  **Pymatgen** - https://pymatgen.org/
+
 
 # Installation guide
 For installation simply clone or download the code in your terminal and in the main directory of the package type:
