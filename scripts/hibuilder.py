@@ -1,3 +1,29 @@
+#!/usr/bin/env python
+"""
+ Overview
+ --------
+ This script automates the creation and manipulation of atomic interface structures
+ between two different bulk phases. The script performs the following operations:
+ - Reads atomic structure data from two input files representing bulk phase 1 and bulk phase 2.
+ - Determines space group number, international symbol, and lattice type for each phase using pymatgen.
+ - Allows users to define lattice directions for both phases to create and manipulate slabs using ASE.
+ - Stacks the two phases to create an interface structure based on the user's chosen stacking direction.
+ - Calculates and displays lattice and angular strain between the two phases.
+ - Provides a warning about potential interface/domain wall artifacts that may require manual adjustment.
+
+ Dependencies:
+ - ase
+ - numpy
+ - colorama
+ - pymatgen
+
+ Usage:
+ - Ensure the required dependencies are installed and the script is executed in a Python environment.
+ - Follow the prompts to input file names, lattice directions, and other user inputs.
+ - The script creates and saves manipulated structures in a "HIS" directory.
+ - Review the warnings for potential artifacts in the generated interface/domain wall structures.
+"""
+
 import os
 import sys
 import ase
