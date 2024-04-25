@@ -9,7 +9,7 @@ setup(
     description='A package for developing domain wall structures for atomistic calculations',
     license='MIT',
     packages=find_packages(),
-    install_requires=['ase','numpy','matplotlib', 'pymatgen'],
+    install_requires=['ase','numpy','matplotlib', 'pymatgen', 'colorama'],
     entry_points={
         'console_scripts': [
             'dwbuilder = scripts.dwbuilder:main',
