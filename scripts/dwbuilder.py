@@ -1,3 +1,39 @@
+#!/usr/bin/env python
+"""
+ Overview
+ --------
+ This script processes a given input file representing a crystal structure 
+ and manipulates it to produce various domain wall structures based on 
+ different space group symmetries. 
+
+ The script uses `ase` and `pymatgen` libraries to manipulate atomic structures,
+ determine symmetry properties, and generate domain wall configurations. It allows
+ the user to choose from a range of predefined space groups and domain wall angles.
+ 
+ The main features include:
+ - Automatic space group identification and lattice type determination using `pymatgen`.
+ - User input for selecting predefined systems and domain wall angles.
+ - Creation of various domain wall structures (109°, 71°, 180°) and supercells.
+ - Calculations of lattice strain between different domains.
+ - Warnings about potential domain wall artifacts that may arise during the 
+   process, advising manual adjustment.
+ 
+ Usage:
+ - Ensure required libraries (`ase`, `pymatgen`, `numpy`, and `colorama`) are 
+   installed.
+ - Run the script and follow prompts for user input.
+ - The script generates domain wall structures and supercells in the respective 
+   directories for the specified system and angle selections.
+
+ Dependencies:
+ - ase
+ - pymatgen
+ - numpy
+ - colorama
+
+ For detailed usage instructions, refer to the prompts in the script.
+"""
+
 import os
 import sys
 import ase
