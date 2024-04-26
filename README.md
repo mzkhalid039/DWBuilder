@@ -4,8 +4,6 @@ Ferroelectric/ferroelastic domain_wall_builder creates domain walls and interfac
 # Overview
 There are three main scripts [dwbuilder.py](scripts/dwbuilder.py), [dbuilder.py](scripts/dbuilder.py) and [hibuilder.py](scripts/hibuilder.py) which build domain wall, single domain structures and experimentally observed atomic interface strutures with known orientation relationships (ORs), respectively. For the domain wall and interfaces, you only need to run [dwbuilder.py](scripts/dwbuilder.py). These scripts can be executed from the command line. I also have included examples of ferroelectric domain walls.
 
-![image](https://github.com/mzkhalid039/DWBuilder/assets/52278972/5a9d9e76-3a97-408d-8476-25afa2871301)
-
 Dependencies
 ------------
 
