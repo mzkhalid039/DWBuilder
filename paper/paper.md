@@ -33,7 +33,8 @@ The first part, handled by the scripts ``dwbuilder.py`` and ``dbuilder.py``,  pr
 
 Currently, the script cannot predict the ORs that would result in a low lattice mismatch between the two interfaces. However, theoretical studies and methods such as edge-to-edge [@zhang2005edge] and face-to-face [@khalid2020atomistic] matching techniques can help predict low lattice misfit for interface construction. This script assumes that the user is already familiar with the appropriate ORs to construct the interface structure. For instance, the ORs of interfaces reported in referenced papers  [@khalid2020ab; @khalid2021imc; @khalid2021first] can be replicated using this script. Additionally, the script can generate atomic interfaces if you know the OR from experiments, and it can predict the atomic interface structure and lattice mismatch between the two bulk phases.
 
- 
+ ![**Figure 1:** Structure of the `DWBuilder` package.\label{fig:scheme}](dwbuilder.png){width="75%"}
+
 # Statement of need:
 ``DWBuilder`` is an interactive toolbox for developing atomic domain walls and interface structures of homogeneous and heterogeneous material compounds, making it suitable for high-throughput calculations. Its target audience includes students and scientists in materials science and physics at any level of expertise. ``DWBuilder`` utilizes the NumPy library extensively, which speeds up execution, particularly when working with large structures. Users are guided through the process of identifying and creating the desired domain walls in a step-by-step manner. The code is designed to be user-friendly and educational, with a focus on plane orientation and electric polarization switching.
 
