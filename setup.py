@@ -4,7 +4,7 @@ from os.path import abspath, dirname
 setup(
     name='dwbuilder',
     version='1.1.0',
-    authors='M.Z.Khalid', 'S.M.Selbach'
+    authors = 'M.Z.Khalid, S.M.Selbach'
     author_email='zeeshan.khalid039@gmail.com',
     description='A package for developing domain wall structures for atomistic calculations',
     license='MIT',
