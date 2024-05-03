@@ -122,7 +122,7 @@ To find the global minimum of an interface structure, it is essential to calcula
 
 To achieve these goals, I often use first-principles methods such as density functional theory (DFT), specifically with the Vienna Ab-initio Simulation Package [VASP](https://www.vasp.at/) at 0 Kelvin. This computational approach helps determine the initial structures for further first-principles calculations. 
 
-## Relevant Papers using DWBuilder
+## Relevant Papers using ```DWBuilder```
 
 1. Khalid MZ, Williamson BAD, Eggested K, Selbach SM. **Hydrogen Doping at Proper/Improper Ferroelectric Domain Walls.** To be submitted. 2024.
 
