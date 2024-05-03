@@ -124,11 +124,14 @@ To achieve these goals, I often use first-principles methods such as density fun
 
 ## Relevant Papers using DWBuilder
 
-[1] Khalid MZ, Williamson BAD, Eggested K, Selbach SM.   Hydrogen Doping at Proper/Improper Ferroelectric Domain Walls. to be submitted. 2024
-[2] Khalid MZ, Friis J, Ninive PH, Marthinsen K, Ringdalen IG, Strandlie A. First-principles study of tensile and shear strength of an Fe2Al5//Fe interface. Computational Materials Science. 2021 May 1;192:110319.
-[3] Khalid MZ, Friis J, Ninive PH, Marthinsen K, Strandlie A. First-principles study of tensile and shear strength of Fe-Al and α-AlFeSi intermetallic compound interfaces. Computational Materials Science. 2021 Feb 1;187:110058.
-[4] Khalid MZ, Friis J, Ninive PH, Marthinsen K, Strandlie A. Ab-initio study of atomic structure and mechanical behaviour of Al/Fe intermetallic interfaces. Computational Materials Science. 2020 Mar 1;174:109481.
-[
+1. Khalid MZ, Williamson BAD, Eggested K, Selbach SM. **Hydrogen Doping at Proper/Improper Ferroelectric Domain Walls.** To be submitted. 2024.
+
+2. Khalid MZ, Friis J, Ninive PH, Marthinsen K, Ringdalen IG, Strandlie A. **First-principles study of tensile and shear strength of an Fe2Al5//Fe interface.** Computational Materials Science. 2021 May 1;192:110319.
+
+3. Khalid MZ, Friis J, Ninive PH, Marthinsen K, Strandlie A. **First-principles study of tensile and shear strength of Fe-Al and α-AlFeSi intermetallic compound interfaces.** Computational Materials Science. 2021 Feb 1;187:110058.
+
+4. Khalid MZ, Friis J, Ninive PH, Marthinsen K, Strandlie A. **Ab-initio study of atomic structure and mechanical behaviour of Al/Fe intermetallic interfaces.** Computational Materials Science. 2020 Mar 1;174:109481.
+
 
 # Questions/Contributions
 If you have any questions, find an issue you can get in contact with [me](mailto:zeeshan.khalid039@gmail.com).
