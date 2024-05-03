@@ -120,9 +120,15 @@ b x c = a
 
 To find the global minimum of an interface structure, it is essential to calculate the optimal distance between the different bulk phases at the interface. You also need to identify the termination site that corresponds to the structure with the lowest energy, as well as consider the homogeneous interface structures of the periodic images.
 
-To achieve these goals, I often use first-principles methods such as density functional theory (DFT), specifically with the Vienna Ab-initio Simulation Package [VASP](https://www.vasp.at/) at 0 Kelvin. This computational approach helps determine the initial structures for further first-principles calculations. You can find more information on this interface in the following paper:
+To achieve these goals, I often use first-principles methods such as density functional theory (DFT), specifically with the Vienna Ab-initio Simulation Package [VASP](https://www.vasp.at/) at 0 Kelvin. This computational approach helps determine the initial structures for further first-principles calculations. 
 
-- Khalid MZ, Friis J, Ninive PH, Marthinsen K, Ringdalen IG, Strandlie A. First-principles study of tensile and shear strength of an Fe2Al5//Fe interface. Computational Materials Science. 2021 May 1;192:110319 [https://doi.org/10.1016/j.commatsci.2021.110319](https://doi.org/10.1016/j.commatsci.2021.110319).
+## Relevant Papers using DWBuilder
+
+[1] Khalid MZ, Williamson BAD, Eggested K, Selbach SM.   Hydrogen Doping at Proper/Improper Ferroelectric Domain Walls. to be submitted. 2024
+[2] Khalid MZ, Friis J, Ninive PH, Marthinsen K, Ringdalen IG, Strandlie A. First-principles study of tensile and shear strength of an Fe2Al5//Fe interface. Computational Materials Science. 2021 May 1;192:110319.
+[3] Khalid MZ, Friis J, Ninive PH, Marthinsen K, Strandlie A. First-principles study of tensile and shear strength of Fe-Al and α-AlFeSi intermetallic compound interfaces. Computational Materials Science. 2021 Feb 1;187:110058.
+[4] Khalid MZ, Friis J, Ninive PH, Marthinsen K, Strandlie A. Ab-initio study of atomic structure and mechanical behaviour of Al/Fe intermetallic interfaces. Computational Materials Science. 2020 Mar 1;174:109481.
+[
 
 # Questions/Contributions
 If you have any questions, find an issue you can get in contact with [me](mailto:zeeshan.khalid039@gmail.com).
