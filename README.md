@@ -132,6 +132,8 @@ To achieve these goals, I often use first-principles methods such as density fun
 
 4. [Khalid MZ, Friis J, Ninive PH, Marthinsen K, Strandlie A. **Ab-initio study of atomic structure and mechanical behaviour of Al/Fe intermetallic interfaces.** Computational Materials Science. 2020 Mar 1;174:109481](https://www.sciencedirect.com/science/article/pii/S0927025619307803).
 
+5. [Khalid MZ, Friis J, Ninive PH, Marthinsen K, Strandlie A. **A first-principles study of the Al (001)/Fe (0-11) interface.** In Materials Science Forum 2019 Jan 27 (Vol. 941, pp. 2349-2355). Trans Tech Publications Ltd.](https://www.scientific.net/MSF.941.2349)
+
 
 # Questions/Contributions
 If you have any questions, find an issue you can get in contact with [me](mailto:zeeshan.khalid039@gmail.com).
