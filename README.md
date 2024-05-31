@@ -1,3 +1,4 @@
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/mzkhalid039/DWBuilder)
 ![GitHub stars](https://img.shields.io/github/stars/mzkhalid039/DWBuilder)
 
 # DWBuilder: Domain Wall Builder
