@@ -1,4 +1,5 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/mzkhalid039/DWBuilder)
+![Python Version](https://img.shields.io/badge/python-3.11-blue)
 ![GitHub stars](https://img.shields.io/github/stars/mzkhalid039/DWBuilder)
 
 # DWBuilder: Domain Wall Builder
