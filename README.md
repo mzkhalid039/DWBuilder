@@ -1,5 +1,8 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/mzkhalid039/DWBuilder)
 ![Python Version](https://img.shields.io/badge/python-3.11-blue)
+HTML: <a href="https://joss.theoj.org/papers/eeae372c75342085351f92af4ca165db"><img src="https://joss.theoj.org/papers/eeae372c75342085351f92af4ca165db/status.svg"></a>
+Markdown: [![status](https://joss.theoj.org/papers/eeae372c75342085351f92af4ca165db/status.svg)](https://joss.theoj.org/papers/eeae372c75342085351f92af4ca165db)
+
 
 # DWBuilder: Domain Wall Builder
 Ferroelectric/ferroelastic domain_wall_builder creates domain walls and interface structure for the perovskites and ceramics. The code reads the structure in the vasp format, and then creates domain walls with user-defined sizes and angles.
