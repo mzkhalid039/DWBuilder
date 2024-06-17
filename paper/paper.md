@@ -8,7 +8,7 @@ tags:
   - atomistic simulations (VASP, LAMMPS)
 authors:
   - name: M.Z.Khalid
-    orcid: https://orcid.org/0000-0002-7866-3870
+    orcid: 0000-0002-7866-3870
     affiliation: 1
   - name: S.M.Selbach
     affiliation: 1
