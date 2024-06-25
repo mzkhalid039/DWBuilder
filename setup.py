@@ -16,7 +16,7 @@ setup(
         'Operating System :: OS Independent',
     ],
     python_requires='>=3.6',
-    install_requires=['ase','numpy','matplotlib', 'pymatgen', 'colorama'],
+    install_requires=['ase','numpy<2','matplotlib', 'pymatgen', 'colorama'],
     entry_points={
         'console_scripts': [
             'dwbuilder = scripts.dwbuilder:main',
