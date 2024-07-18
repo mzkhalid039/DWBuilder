@@ -1,0 +1,9 @@
+Command: python ndw.py 8 CONTCAR_am.POSCAR.vasp CONTCAR_bp.POSCAR.vasp NDW.vasp
+Running NDW with supercell size: 8
+Importing POSCAR from CONTCAR_am.POSCAR.vasp
+Imported POSCAR from CONTCAR_am.POSCAR.vasp
+Importing POSCAR from CONTCAR_bp.POSCAR.vasp
+Imported POSCAR from CONTCAR_bp.POSCAR.vasp
+Writing POSCAR to NDW.vasp
+POSCAR written to NDW.vasp
+NDW.vasp has been written.

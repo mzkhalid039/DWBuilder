@@ -1,0 +1,16 @@
+Running CDW with supercell size: 4
+Importing POSCAR file: CONTCAR_am.POSCAR.vasp
+Imported lattice vectors: [[ 6.09981401e+00 -1.42362232e-04  5.64155086e-04]
+ [-3.05003029e+00  5.28280743e+00  1.80000000e-15]
+ [ 1.01644431e-03  5.86844395e-04  1.14204515e+01]]
+Imported atom types: ['Y', 'Mn', 'O']
+Imported atom counts: [6, 6, 18]
+Importing POSCAR file: CONTCAR_bp.POSCAR.vasp
+Imported lattice vectors: [[ 6.09981889e+00 -1.41876359e-04  5.64033121e-04]
+ [-3.05003231e+00  5.28281093e+00  1.80000000e-15]
+ [ 1.01631257e-03  5.86768333e-04  1.14204383e+01]]
+Imported atom types: ['Y', 'Mn', 'O']
+Imported atom counts: [6, 6, 18]
+Writing POSCAR file: CDW.vasp
+POSCAR file written successfully.
+CDW.vasp has been written.
