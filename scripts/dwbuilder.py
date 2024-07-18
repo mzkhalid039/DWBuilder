@@ -218,22 +218,15 @@ class DomainWallManager:
 
     def get_system_selection(self):
         data = self.sym.get_symmetry_dataset()
-        if data["international"] == "R3c":
-            return 1
-        elif data["international"] == "R3m":
-            return 2
-        elif data["international"] == "P4mm":
-            return 3
-        elif data["international"] == "Pmc2_1":
-            return 4
-        elif data["international"] == "Pnma":
-            return 5
-        elif data["international"] == "P6_3cm":
-            return 6
-        else:
-            print("Warning: The international symbol does not match any pre-defined systems.")
-            print("Please manually select the system.")
-            return 7
+        predefined_systems = {
+            "R3c": 1,
+            "R3m": 2,
+            "P4mm": 3,
+            "Pmc2_1": 4,
+            "Pnma": 5,
+            "P6_3cm": 6
+        }
+        return predefined_systems.get(data["international"], 7)
 
     def manual_system_selection(self):
         print("Select the system:")
@@ -429,8 +422,10 @@ class DomainWallManager:
         self.system_selection = self.get_system_selection()
         self.log.append(f"System selection: {self.system_selection}")
         if self.system_selection == 7:
-            self.create_domain_wall()
-            return
+            self.system_selection = self.manual_system_selection()
+            if self.system_selection == 7:
+                self.create_domain_wall()
+                return
         if self.system_selection == 6:
             self.process_P6_3cm()
             return
