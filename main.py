@@ -1,12 +1,12 @@
-# main.py
 import os
 import subprocess
 import sys
 
 def run_script(script_name):
-    if os.path.exists(script_name):
+    script_path = os.path.join(os.path.dirname(__file__), 'scripts', script_name)
+    if os.path.exists(script_path):
         try:
-            subprocess.run([sys.executable, script_name], check=True)
+            subprocess.run([sys.executable, script_path], check=True)
         except subprocess.CalledProcessError as e:
             print(f"An error occurred while running the script: {e}")
     else:
@@ -19,7 +19,6 @@ def main():
         '3': 'hibuilder.py',
         '4': 'slab.py',
         '5': 'polarization.py'
-
     }
 
     print("Select a script to run:")
