@@ -18,6 +18,7 @@ def main():
         '2': 'dbuilder.py',
         '3': 'hibuilder.py',
         '4': 'slab.py'
+        '5': 'polarization.py'
     }
 
     print("Select a script to run:")
