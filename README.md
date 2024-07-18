@@ -33,36 +33,42 @@ To execute the code, one should run the dwbuilder command from the command line.
 _ex:_
 
 ```
-Enter the input file name (with extension): BiFeO3.vasp
+(py311) muhammzk:Jupyter zeeshan$ dwbuilder
+Select a script to run:
+1: dwbuilder.py
+2: dbuilder.py
+3: hibuilder.py
+4: slab.py
+5: polarization.py
+Enter the number of the script to run: 1
+Enter the input file name (with extension): BiFeO3_R3c.vasp
 Space group number: 161
 International symbol: R3c
 Lattice type: rhombohedral
 Select the domain wall angle:
-1 - 109 degrees
-2 - 71 degrees
-3 - 180 degrees
-4 - All angles
-4
-Enter the domain wall size (in number of unit cells): 6
-Domain 1 Orientation (109 DW): a = [0, 1, 0), b = [1, 0, 0], c = (0, 0, 1)
-Domain 2 Orientation (109 DW): a = [0, -1, 0), b = [-1, 0, 0], c = (0, 0, 1)
-Warning: This code might create domain wall artifacts, like missing or duplicate atoms, at the domain wall. Therefore, manual adjustment may be needed.
-strain along a (%): 0.0
-strain along b (%): 0.0
-strain along c (%): 0.0
-Domain 1 Orientation (71 DW): a = [1, -1, 0), b = [0, 0, 1], c = (1, 1, 0)
-Domain 2 Orientation (71 DW): a = [-1, 1, 0), b = [0, 0, -1], c = (1, 1, 0)
-Warning: This code might create domain wall artifacts, like missing or duplicate atoms, at the domain wall. Therefore, manual adjustment may be needed.
-strain along a (%): 0.0
-strain along b (%): 0.0
-strain along c (%): 0.0
-Domain 1 Orientation (180 DW): a = [1, 1, 0), b = [0, 0, -1], c = (-1, 1, 0)
-Domain2 Orientation (180 DW): a = [-1, -1, 0), b = [0, 0, -1], c = (-1, 1, 0)
-Warning: This code might create domain wall artifacts, like missing or duplicate atoms, at the domain wall. Therefore, manual adjustment may be needed.
-strain along a (%): 0.0
-strain along b (%): 0.0
-strain along c (%): 0.0
-Enter size of supercell (in number of unit cells):  
+R180 - R180
+R71 - R71
+R109 - R109
+ALL - ALL
+ALL
+Enter the domain wall size (in number of unit cells): 3
+Enter the size of the supercell along the a direction: 1
+Enter the size of the supercell along the b direction: 1
+Enter the size of the supercell along the c direction: 1
+Enter the cutoff distance in angstroms to remove close atoms: 0
+Lattice strain for R109 DW:
+strain along a (%): 0.00
+strain along b (%): 0.00
+strain along c (%): 0.00
+Lattice strain for R71 DW:
+strain along a (%): 0.00
+strain along b (%): 0.00
+strain along c (%): 0.00
+Lattice strain for R180 DW:
+strain along a (%): 0.00
+strain along b (%): 0.00
+strain along c (%): 0.00
+Domain wall structures and supercells created successfully! Log file written to LOGFILE.txt
 ```
 
 Once you have developed the desired domain wall structure, you can visualize in vesta or ase to further refine domain wall artifacts.  In the above examples, the domain walls are parallel along (001)//(001) planes.
