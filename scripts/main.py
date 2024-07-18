@@ -17,7 +17,7 @@ def main():
         '1': 'dwbuilder.py',
         '2': 'dbuilder.py',
         '3': 'hibuilder.py',
-        '4': 'slab.py'
+        '4': 'slab.py',
         '5': 'polarization.py'
     }
 
