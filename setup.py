@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='dwbuilder',
-    version='1.1.0',
+    version='2.0.0',
     author='M.Z.Khalid, S.M.Selbach',
     author_email='zeeshan.khalid039@gmail.com',
     description='A package for developing domain wall structures for atomistic calculations',
