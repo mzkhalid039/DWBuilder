@@ -1,0 +1,33 @@
+Space group number: 160
+International symbol: R3m
+Lattice type: rhombohedral
+System selection: 2
+Domain wall angle: DomainWallAngle.ALL
+Domain wall size: 6 unit cells
+Supercell size: a=2, b=1, c=1
+Cutoff distance: 0.5 angstroms
+Stacked slab saved to R180_stacked.vasp
+Domain slab 1 saved to R180_domain1.vasp
+Domain slab 2 saved to R180_domain2.vasp
+Lattice strain for R180 DW:
+strain along a (%): 0.00
+strain along b (%): 0.00
+strain along c (%): 0.00
+Supercell saved to R180_supercell.vasp
+Stacked slab saved to R71_stacked.vasp
+Domain slab 1 saved to R71_domain1.vasp
+Domain slab 2 saved to R71_domain2.vasp
+Lattice strain for R71 DW:
+strain along a (%): 0.00
+strain along b (%): 0.00
+strain along c (%): 0.00
+Supercell saved to R71_supercell.vasp
+Stacked slab saved to R109_stacked.vasp
+Domain slab 1 saved to R109_domain1.vasp
+Domain slab 2 saved to R109_domain2.vasp
+Lattice strain for R109 DW:
+strain along a (%): 0.00
+strain along b (%): 0.00
+strain along c (%): 0.00
+Supercell saved to R109_supercell.vasp
+Domain wall structures and supercells created successfully!
