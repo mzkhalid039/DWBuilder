@@ -8,7 +8,8 @@ setup(
     description='A package for developing domain wall structures for atomistic calculations',
     license='MIT',
     url='https://github.com/mzkhalid039/DWBuilder',
-    packages=find_packages(),
+    packages=find_packages(include=['scripts']),
+    py_modules=["main"],  # Ensure main.py is included
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',
