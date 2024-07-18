@@ -25,114 +25,160 @@
 """
 
 import os
-import sys
+import shutil
 import ase
 import ase.io
 from ase.build import cut, rotate, stack
 import numpy as np
 from colorama import init, Fore, Style
 from numpy.linalg import norm
-from colorama import Fore, Style
 from pymatgen.core.structure import Structure
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
+from ase.neighborlist import NeighborList
 
 
-filename1 = input("Enter the bulk phase 1file name (with extension): ")
-filename2 = input("Enter the bulk phase 2 file name (with extension): ")
+def read_structure(file_name):
+    return ase.io.read(file_name)
 
 
-# Read the input file
-D1 = ase.io.read(filename1)
-D2 = ase.io.read(filename2)
+def get_symmetry_info(file_name, log):
+    struct = Structure.from_file(file_name)
+    sym = SpacegroupAnalyzer(struct)
+    data = sym.get_symmetry_dataset()
+    log.append(f"Space group number: {data['number']}")
+    log.append(f"International symbol: {data['international']}")
+    log.append(f"Lattice type: {sym.get_lattice_type()}")
+    print(f"Space group number: {data['number']}")
+    print(f"International symbol: {data['international']}")
+    print(f"Lattice type: {sym.get_lattice_type()}")
 
 
-struct = Structure.from_file(filename1)
-sym = SpacegroupAnalyzer(struct)
-data = sym.get_symmetry_dataset()
-
-print("Bulk phase 1 Space group number: {}".format(data["number"]))
-print("Bulk phase 1 International symbol: {}".format(data["international"]))
-print(f"Bulk phase 1 Lattice type: {sym.get_lattice_type()}")
-
-struct = Structure.from_file(filename2)
-sym = SpacegroupAnalyzer(struct)
-data = sym.get_symmetry_dataset()
-
-print("Bulk phase 2 Space group number: {}".format(data["number"]))
-print("Bulk phase 2 International symbol: {}".format(data["international"]))
-print(f"Bulk phase 2 Lattice type: {sym.get_lattice_type()}")
+def get_lattice_direction(prompt, log):
+    direction_input = input(prompt)
+    log.append(f"{prompt.strip()}: {direction_input}")
+    return [float(value.strip()) for value in direction_input.split(',')]
 
 
-# Manually develop interfaces/DW if you have ORs
-
-# Find the path of the current directory
-current_path = os.getcwd()
-    
-# initialize colorama
-init()
-
-#Creating planes
-
-# define lattice directions for slab1
-a_input = input(Fore.GREEN + Style.BRIGHT + "Enter three comma-separated values for bulk 1 lattice direction a: " + Style.RESET_ALL)
-a = [float(value.strip()) for value in a_input.split(',')]
-
-b_input = input(Fore.GREEN + Style.BRIGHT + "Enter three comma-separated values for bulk 1 lattice direction b: " + Style.RESET_ALL)
-b = [float(value.strip()) for value in b_input.split(',')]
-
-c_input = input(Fore.GREEN + Style.BRIGHT + "Enter three comma-separated values for bulk 1 lattice direction c: " + Style.RESET_ALL)
-c = [float(value.strip()) for value in c_input.split(',')]
-
- # define lattice directions for slab2
-a_input = input(Fore.BLUE + Style.BRIGHT + "Enter three comma-separated values for bulk 2 lattice direction a: " + Style.RESET_ALL)
-a1 = [float(value.strip()) for value in a_input.split(',')]
-
-b_input = input(Fore.BLUE + Style.BRIGHT + "Enter three comma-separated values for bulk 2 lattice direction b: " + Style.RESET_ALL)
-b1 = [float(value.strip()) for value in b_input.split(',')]
-
-c_input = input(Fore.BLUE + Style.BRIGHT + "Enter three comma-separated values for bulk 2 lattice direction c: " + Style.RESET_ALL)
-c1 = [float(value.strip()) for value in c_input.split(',')]
-
-# create and manipulate slab1 model
-slab1 = cut(D1, a=a, b=b, c=c)
-rotate(slab1, slab1.cell[0], (0,1,0), slab1.cell[1], (1,0,0))
-os.makedirs(os.path.join(current_path, 'HIS'))
-slab1.write(os.path.join(current_path, 'HIS', 'bulk1.vasp'), sort=True, vasp5=True)
-
-    #view(slab1)
-
-# create and manipulate slab2 model
-slab2 = cut(D2, a=a1, b=b1, c=c1)
-rotate(slab2, slab2.cell[0], (0,1,0), slab2.cell[1], (1,0,0))
-slab2.write(os.path.join(current_path, 'HIS', 'bulk2.vasp'), sort=True, vasp5=True)
-
-#view(slab2)
-
-interface_direction = int(input("Enter the stacking direction 0 for a, 1 for b and 2 for c): "))
-
-slab = stack(slab1, slab2, axis=interface_direction, maxstrain=None)
-slab.write(os.path.join(current_path, 'HIS', 'interface.vasp'), sort=True, vasp5=True)
-    
-
-slab.write('H-interface.vasp', sort=True, vasp5=True)
+def create_slab(D, a, b, c):
+    slab = cut(D, a=a, b=b, c=c)
+    rotate(slab, slab.cell[0], (0, 1, 0), slab.cell[1], (1, 0, 0))
+    return slab
 
 
-# Calculate lattice strain
+def get_unique_path(directory):
+    if not os.path.exists(directory):
+        return directory
+    base, extension = os.path.splitext(directory)
+    counter = 1
+    while os.path.exists(directory):
+        directory = f"{base}_{counter}"
+        counter += 1
+    return directory
 
-a1, b1, c1 = slab1.cell
-a2, b2, c2 = slab2.cell
 
-print ('strain along a (%):', (norm(a1) - norm(a2)) / norm(a2) * 100.)
-print ('strain along b (%):', (norm(b1) - norm(b2)) / norm(b2) * 100.)
-print ('strain along c (%):', (norm(c1) - norm(c2)) / norm(c2) * 100.)
+def save_slab(slab, directory, file_name):
+    os.makedirs(directory, exist_ok=True)
+    slab.write(os.path.join(directory, file_name), sort=True, vasp5=True)
 
-# Calculate angular strain
-theta_a = np.arccos(np.dot(a1, a2) / (np.linalg.norm(a1) * np.linalg.norm(a2))) 
-theta_b = np.arccos(np.dot(b1, b2) / (np.linalg.norm(b1) * np.linalg.norm(b2))) 
-theta_c = np.arccos(np.dot(c1, c2) / (np.linalg.norm(c1) * np.linalg.norm(c2)))
-print('Angular strain along a (radians):', theta_a) 
-print('Angular strain along b (radians):', theta_b) 
-print('Angular strain along c (radians):', theta_c)
 
-print("\033[1;31;40mWarning: This code could generate interface/domain wall artifacts (i.e., Oxygen atoms, duplicate atoms etc,) at the interface, thus it requires manual adjustment.\033[0m")
+def remove_close_atoms(atoms, cutoff):
+    nl = NeighborList([cutoff / 2.0] * len(atoms), self_interaction=False, bothways=True)
+    nl.update(atoms)
+    indices_to_remove = set()
+    for i in range(len(atoms)):
+        indices, offsets = nl.get_neighbors(i)
+        for idx in indices:
+            if i < idx:  # To avoid double counting
+                distance = atoms.get_distance(i, idx)
+                if distance < cutoff:
+                    indices_to_remove.add(idx)
+    atoms = atoms[[atom.index not in indices_to_remove for atom in atoms]]
+    return atoms
 
+
+def calculate_strain(slab1, slab2, log):
+    a1, b1, c1 = slab1.cell
+    a2, b2, c2 = slab2.cell
+
+    strain_a = (norm(a1) - norm(a2)) / norm(a2) * 100
+    strain_b = (norm(b1) - norm(b2)) / norm(b2) * 100
+    strain_c = (norm(c1) - norm(c2)) / norm(c2) * 100
+
+    theta_a = np.arccos(np.dot(a1, a2) / (norm(a1) * norm(a2)))
+    theta_b = np.arccos(np.dot(b1, b2) / (norm(b1) * norm(b2)))
+    theta_c = np.arccos(np.dot(c1, c2) / (norm(c1) * norm(c2)))
+
+    log.append(f"Strain along a (%): {strain_a}")
+    log.append(f"Strain along b (%): {strain_b}")
+    log.append(f"Strain along c (%): {strain_c}")
+
+    log.append(f"Angular strain along a (radians): {theta_a}")
+    log.append(f"Angular strain along b (radians): {theta_b}")
+    log.append(f"Angular strain along c (radians): {theta_c}")
+
+    print('Strain along a (%):', strain_a)
+    print('Strain along b (%):', strain_b)
+    print('Strain along c (%):', strain_c)
+
+    print('Angular strain along a (radians):', theta_a)
+    print('Angular strain along b (radians):', theta_b)
+    print('Angular strain along c (radians):', theta_c)
+
+
+def main():
+    init(autoreset=True)
+    log = []
+
+    filename1 = input("Enter the bulk phase 1 file name (with extension): ")
+    filename2 = input("Enter the bulk phase 2 file name (with extension): ")
+    log.append(f"Bulk phase 1 file: {filename1}")
+    log.append(f"Bulk phase 2 file: {filename2}")
+
+    D1 = read_structure(filename1)
+    D2 = read_structure(filename2)
+
+    print("Bulk phase 1:")
+    get_symmetry_info(filename1, log)
+    print("Bulk phase 2:")
+    get_symmetry_info(filename2, log)
+
+    current_path = os.getcwd()
+    directory = get_unique_path(os.path.join(current_path, 'HIS'))
+    log.append(f"Output directory: {directory}")
+
+    a = get_lattice_direction(Fore.GREEN + Style.BRIGHT + "Enter three comma-separated values for bulk 1 lattice direction a: " + Style.RESET_ALL, log)
+    b = get_lattice_direction(Fore.GREEN + Style.BRIGHT + "Enter three comma-separated values for bulk 1 lattice direction b: " + Style.RESET_ALL, log)
+    c = get_lattice_direction(Fore.GREEN + Style.BRIGHT + "Enter three comma-separated values for bulk 1 lattice direction c: " + Style.RESET_ALL, log)
+
+    a1 = get_lattice_direction(Fore.BLUE + Style.BRIGHT + "Enter three comma-separated values for bulk 2 lattice direction a: " + Style.RESET_ALL, log)
+    b1 = get_lattice_direction(Fore.BLUE + Style.BRIGHT + "Enter three comma-separated values for bulk 2 lattice direction b: " + Style.RESET_ALL, log)
+    c1 = get_lattice_direction(Fore.BLUE + Style.BRIGHT + "Enter three comma-separated values for bulk 2 lattice direction c: " + Style.RESET_ALL, log)
+
+    slab1 = create_slab(D1, a, b, c)
+    save_slab(slab1, directory, 'bulk1.vasp')
+
+    slab2 = create_slab(D2, a1, b1, c1)
+    save_slab(slab2, directory, 'bulk2.vasp')
+
+    interface_direction = int(input("Enter the stacking direction (0 for a, 1 for b, and 2 for c): "))
+    log.append(f"Stacking direction: {interface_direction}")
+    slab = stack(slab1, slab2, axis=interface_direction, maxstrain=None)
+    save_slab(slab, directory, 'interface.vasp')
+
+    cutoff = float(input("Enter the cutoff distance in angstroms to remove close atoms: "))
+    log.append(f"Cutoff distance: {cutoff}")
+    slab = remove_close_atoms(slab, cutoff)
+    save_slab(slab, directory, 'interface_cleaned.vasp')
+
+    calculate_strain(slab1, slab2, log)
+
+    print("\033[1;31;40mWarning: This code could generate interface/domain wall artifacts (i.e., Oxygen atoms, duplicate atoms etc,) at the interface, thus it requires manual adjustment.\033[0m")
+    log.append("Warning: This code could generate interface/domain wall artifacts (i.e., Oxygen atoms, duplicate atoms etc,) at the interface, thus it requires manual adjustment.")
+
+    with open(os.path.join(directory, "LOGFILE.txt"), "w") as logfile:
+        logfile.write("\n".join(log))
+    print(f"Log file written to {os.path.join(directory, 'LOGFILE.txt')}")
+
+
+if __name__ == "__main__":
+    main()
