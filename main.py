@@ -14,21 +14,30 @@ def run_script(script_name):
 
 def display_dwbuilder_design():
     design = """
-    *********************************************
-    *                                           *
-    *               DWBuilder                   *
-    *                v2.0.0                     *
-    *********************************************
+    ***************************************************
+    *                                                 *
+    *                Welcome to DWBuilder             *
+    *                                                 *
+    ***************************************************
+    *        Hey, you must know what you are doing.   *
+    *  Otherwise, you might get wrong results.        *
+    ***************************************************
+    *     Core Developer: M.Z.Khalid                  *
+    *     Main Contributors: S.M.Selbach              *
+    *     Email: zeeshan.khalid039@gmail.com          *
+    ***************************************************
     """
     print(design)
 
-def display_scripts(scripts):
+def display_script_options(scripts):
     print("Select a script to run:")
-    script_items = list(scripts.items())
-    for i in range(0, len(script_items), 4):
-        for key, value in script_items[i:i+4]:
-            print(f"{key}: {value}")
-        print()
+    script_keys = list(scripts.keys())
+    half = (len(script_keys) + 1) // 2  # Calculate half, ensuring the second column gets the extra if odd
+
+    for i in range(half):
+        left = f"{script_keys[i]}: {scripts[script_keys[i]]}"
+        right = f"{script_keys[i+half]}: {scripts[script_keys[i+half]]}" if i + half < len(script_keys) else ""
+        print(f"{left:<30} {right}")
 
 def main():
     display_dwbuilder_design()
@@ -43,7 +52,7 @@ def main():
         '7': 'vasp2cif.py'
     }
 
-    display_scripts(scripts)
+    display_script_options(scripts)
 
     choice = input("Enter the number of the script to run: ").strip()
 
