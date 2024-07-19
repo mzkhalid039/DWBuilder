@@ -57,6 +57,7 @@ a2=  [1, 1, 0], b2=  [0, 0, -1], c2= [-1, 1, 0]
 
 ```
 **R180**
+
 Similar to the R71 domain wall, the R180 {1-10} wall is also parallel to the diagonal plane in the primitive cell. For the R180 FDW:
 - A supercell is made by stacking the rotated 10-atom unit cell.
 - The final FDWs are developed by stacking along the [1-10] plane.
