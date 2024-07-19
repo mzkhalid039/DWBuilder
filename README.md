@@ -36,12 +36,25 @@ _ex:_
 
 ```
 (py311) muhammzk:Jupyter zeeshan$ dwbuilder
+
+    ***************************************************
+    *                                                 *
+    *                Welcome to DWBuilder             *
+    *                                                 *
+    ***************************************************
+    *        Hey, you must know what you are doing.   *
+    *  Otherwise, you might get wrong results.        *
+    ***************************************************
+    *     Core Developer: M.Z.Khalid                  *
+    *     Main Contributors: S.M.Selbach              *
+    *     Email: zeeshan.khalid039@gmail.com          *
+    ***************************************************
+    
 Select a script to run:
-1: dwbuilder.py
-2: dbuilder.py
-3: hibuilder.py
-4: slab.py
-5: polarization.py
+1: dwbuilder.py                5: polarization.py
+2: dbuilder.py                 6: supercell.py
+3: hibuilder.py                7: vasp2cif.py
+4: slab.py                     
 Enter the number of the script to run: 1
 Enter the input file name (with extension): BiFeO3_R3c.vasp
 Space group number: 161
