@@ -21,7 +21,7 @@ setup(
         'numpy<2',
         'matplotlib',
         'pymatgen',
-        'colorama'
+        'colorama',
         'networkx'
     ],
     entry_points={
