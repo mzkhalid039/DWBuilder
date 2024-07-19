@@ -52,8 +52,8 @@ The R71 domain walls are developed by stacking along the normal direction to the
 For the R71 FDWs, the orientation relationships for both domains are:
 
  ```
-a1=  [1, 1, 0], b1=  [0, 0, 1], c1= [1, -1, 0]
-a2=  [1, 1, 0], b2=  [0, 0, -1], c2= [-1, 1, 0]
+a1=[1, 1, 0], b1=[0, 0, 1], c1=[1, -1, 0]
+a2=[1, 1, 0], b2=[0, 0, -1], c2=[-1, 1, 0]
 
 ```
 **R180**
@@ -63,8 +63,8 @@ Similar to the R71 domain wall, the R180 {1-10} wall is also parallel to the dia
 - The final FDWs are developed by stacking along the [1-10] plane.
 
  ```
-a1=  [1, 1, 0], b1=  [0, 0, 1], c1= [1, -1, 0]
-a2=  [-1, -1, 0], b2=  [0, 0, -1], c2= [1, -1, 0]
+a1=[1, 1, 0], b1=[0, 0, 1], c1=[1, -1, 0]
+a2=[-1, -1, 0], b2=[0, 0, -1], c2=[1, -1, 0]
 
 ```
 The transformation ensures that the polarization vectors in the two domains are oriented 180 degrees apart, achieving the necessary mirror symmetry for the R180 domain wall. 
@@ -78,8 +78,8 @@ The transformation ensures that the polarization vectors in the two domains are 
 This straightforward stacking ensures that the polarization vectors align as required for the R109 domain wall configuration.
 
  ```
-a1=  [1, 0, 0], b1=  [0, 1, 1], c1= [0, 0, 1]
-a2=  [1, 0, 0], b2=  [0, -1, 0], c2= [0,0 -1]
+a1=[1, 0, 0], b1=[0, 1, 1], c1=[0, 0, 1]
+a2=[1, 0, 0], b2=[0, -1, 0], c2=[0,0 -1]
 ```
 
 # Usage
