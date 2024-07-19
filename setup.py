@@ -22,6 +22,7 @@ setup(
         'matplotlib',
         'pymatgen',
         'colorama'
+        'networkx'
     ],
     entry_points={
         'console_scripts': [
