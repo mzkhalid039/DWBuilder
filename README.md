@@ -41,7 +41,7 @@ Ferroelectric materials with a rhombohedral space group of R3m exhibit three typ
 To analyze the R71 and R180 FDWs, the pseudocubic rhombohedral unit cell is transformed into a 10-atom cell by rotating it 45° around the z-axis relative to the parent cubic unit cell. The lattice vectors used for this transformation are:
 
 ```
-a=  [1, 1, 0], b=  [0, 0, 1], c= [1, -1, 0]
+a=[1, 1, 0], b=[0, 0, 1], c=[1, -1, 0]
 
 ```
 
