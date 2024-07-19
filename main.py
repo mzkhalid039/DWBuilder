@@ -12,17 +12,27 @@ def run_script(script_name):
     else:
         print(f"Script {script_name} does not exist.")
 
+def display_dwbuilder_design():
+    design = """
+    *********************************************
+    *                                           *
+    *               DWBuilder                   *
+    *                                           *
+    *********************************************
+    """
+    print(design)
+
 def main():
+    display_dwbuilder_design()
+    
     scripts = {
         '1': 'dwbuilder.py',
         '2': 'dbuilder.py',
         '3': 'hibuilder.py',
         '4': 'slab.py',
-        '5': 'polarization.py'
-        '6': 'supercell.py'
+        '5': 'polarization.py',
+        '6': 'supercell.py',
         '7': 'vasp2cif.py'
-
-
     }
 
     print("Select a script to run:")
