@@ -36,10 +36,10 @@ def main():
     }
 
     print("Select a script to run:")
-    for key, value in scripts.items():
-        print(f"{key}: {value}")
+    for i, (key, value) in enumerate(scripts.items(), 1):
+        print(f"{key}: {value}", end="\t" if i % 4 != 0 else "\n")
 
-    choice = input("Enter the number of the script to run: ").strip()
+    choice = input("\nEnter the number of the script to run: ").strip()
 
     if choice in scripts:
         run_script(scripts[choice])
