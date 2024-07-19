@@ -106,12 +106,25 @@ In this example, I have reproduced an orientation relationship reported in the f
 
 ```
 (py311) muhammzk:Jupyter zeeshan$ dwbuilder
+
+    ***************************************************
+    *                                                 *
+    *                Welcome to DWBuilder             *
+    *                                                 *
+    ***************************************************
+    *        Hey, you must know what you are doing.   *
+    *  Otherwise, you might get wrong results.        *
+    ***************************************************
+    *     Core Developer: M.Z.Khalid                  *
+    *     Main Contributors: S.M.Selbach              *
+    *     Email: zeeshan.khalid039@gmail.com          *
+    ***************************************************
+    
 Select a script to run:
-1: dwbuilder.py
-2: dbuilder.py
-3: hibuilder.py
-4: slab.py
-5: polarization.py
+1: dwbuilder.py                5: polarization.py
+2: dbuilder.py                 6: supercell.py
+3: hibuilder.py                7: vasp2cif.py
+4: slab.py                     
 Enter the number of the script to run: 3
 Enter the bulk phase 1file name (with extension): Fe_unitcell.vasp
 Enter the bulk phase 2 file name (with extension): Fe2Al5.vasp
