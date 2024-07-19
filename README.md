@@ -25,6 +25,7 @@ For installation simply clone or download the code in your terminal and in the m
 > pip install .
 ```
 This will copy the modules to your active python site-packages, thereby making them importable in any python script and will put the scrpits in the python bin, thereby making them executable in the shell.
+
 After installation, you can start the software by running the following command in your terminal:
 ```
 > dwbuilder
