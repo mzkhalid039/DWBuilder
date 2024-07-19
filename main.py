@@ -22,6 +22,14 @@ def display_dwbuilder_design():
     """
     print(design)
 
+def display_scripts(scripts):
+    print("Select a script to run:")
+    script_items = list(scripts.items())
+    for i in range(0, len(script_items), 4):
+        for key, value in script_items[i:i+4]:
+            print(f"{key}: {value}")
+        print()
+
 def main():
     display_dwbuilder_design()
     
@@ -35,11 +43,9 @@ def main():
         '7': 'vasp2cif.py'
     }
 
-    print("Select a script to run:")
-    for i, (key, value) in enumerate(scripts.items(), 1):
-        print(f"{key}: {value}", end="\t" if i % 4 != 0 else "\n")
+    display_scripts(scripts)
 
-    choice = input("\nEnter the number of the script to run: ").strip()
+    choice = input("Enter the number of the script to run: ").strip()
 
     if choice in scripts:
         run_script(scripts[choice])
