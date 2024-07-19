@@ -40,7 +40,7 @@ However, if you are unsure about the polarization dirction, you can run ```polar
 _ex:_
 
 ```
-(py311) muhammzk:Jupyter zeeshan$ dwbuilder
+> dwbuilder
 
     ***************************************************
     *                                                 *
@@ -110,7 +110,7 @@ Amm2 (user-defined)
 In this example, I have reproduced an orientation relationship reported in the following article [CMS](https://www.sciencedirect.com/science/article/pii/S0927025621000446). 
 
 ```
-(py311) muhammzk:Jupyter zeeshan$ dwbuilder
+> dwbuilder
 
     ***************************************************
     *                                                 *
