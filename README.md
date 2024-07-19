@@ -80,7 +80,6 @@ This straightforward stacking ensures that the polarization vectors align as req
  ```
 a1=  [1, 0, 0], b1=  [0, 1, 1], c1= [0, 0, 1]
 a2=  [1, 0, 0], b2=  [0, -1, 0], c2= [0,0 -1]
-
 ```
 
 # Usage
