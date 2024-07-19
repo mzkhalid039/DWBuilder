@@ -19,6 +19,8 @@ def main():
         '3': 'hibuilder.py',
         '4': 'slab.py',
         '5': 'polarization.py'
+        '6': 'supercell.py'
+
     }
 
     print("Select a script to run:")
