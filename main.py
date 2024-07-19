@@ -49,7 +49,9 @@ def main():
         '4': 'slab.py',
         '5': 'polarization.py',
         '6': 'supercell.py',
-        '7': 'vasp2cif.py'
+        '7': 'vasp2cif.py',
+        '8': 'bondanalysis.py'
+
     }
 
     display_script_options(scripts)
