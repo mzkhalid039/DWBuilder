@@ -53,7 +53,7 @@ a=[1, 1, 0], b=[0, 0, 1], c=[1, -1, 0]
 
 **R71**
 
-The R71 domain walls are developed by stacking along the normal direction to the [1-10] plane, which aligns with the a-axis in the rotated coordinate system. Additionally, the mirror symmtry was developed by tranforming ```[1-10]``` to ```[-110]``` and from ```[001]``` to ```[00-1]```.
+The R71 domain walls are developed by stacking along the normal direction to the ```[1-10]``` plane, which aligns with the a-axis in the rotated coordinate system. Additionally, the mirror symmtry was developed by tranforming ```[1-10]``` to ```[-110]``` and from ```[001]``` to ```[00-1]```.
 
 For the R71 FDWs, the orientation relationships for both domains (D1 and D2) are:
 
@@ -63,7 +63,7 @@ For the R71 FDWs, the orientation relationships for both domains (D1 and D2) are
 
 **R180**
 
-Similar to the R71 domain wall, the R180 {1-10} wall is also parallel to the diagonal plane in the primitive cell. For the R180 FDW:
+Similar to the R71 domain wall, the R180 ```{1-10}``` wall is also parallel to the diagonal plane in the primitive cell. For the R180 FDW:
 - A supercell is made by stacking the rotated 10-atom unit cell.
 - The final FDWs are developed by stacking along the ```[1-10]``` plane.
 
