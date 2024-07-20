@@ -89,6 +89,18 @@ def plot_bonding_network(structure, bond_dict, shortest_bond=None, longest_bond=
     plt.title(f"Bonding Network {title_suffix} (Node numbers represent atom indices)")
     plt.show()
 
+def plot_bond_length_histogram(bond_lengths_dict, title_suffix=""):
+    """Plot a histogram of bond lengths."""
+    plt.figure(figsize=(10, 6))
+    for bond_type, bond_lengths in bond_lengths_dict.items():
+        plt.hist(bond_lengths, bins=30, alpha=0.5, label='-'.join(bond_type))
+    plt.xlabel('Bond Length (Å)')
+    plt.ylabel('Frequency')
+    plt.title(f'Histogram of Bond Lengths {title_suffix}')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
 def plot_combined_bond_length_histogram(bond_lengths_dict1, bond_lengths_dict2, title_suffix1="", title_suffix2=""):
     """Plot combined histogram of bond lengths."""
     plt.figure(figsize=(10, 6))
