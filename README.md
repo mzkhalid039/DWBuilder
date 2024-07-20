@@ -94,9 +94,9 @@ This straightforward stacking ensures that the polarization vectors align as req
 Similar to the R3m , R3c also possess three FDWs R71, R109 and R180. The R3c domain walls are developed by converting reference R3c structure into a pseudocubic cell by cutting along (1-11) plane, which is also the polarization axis. The transformation vectors used to convert R3c structure into pseudocubic cell is given as:
 
 ```
-          [  1 -1  1 ]                
-    T = [  1  1 -1 ]       
-          [ -1  1  1 ]        
+        [ 1 -1  1 ]                
+    T = [ 1  1 -1 ]       
+        [ -1 1  1 ]        
 
 ```
 
