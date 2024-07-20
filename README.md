@@ -34,9 +34,9 @@ After installation, you can start the software by running the following command 
 ## R3m
 Ferroelectric materials with a rhombohedral space group of R3m exhibit three types of ferroelectric domain walls (FDWs): R71, R109, and R180. Due to neutrality and mechanical compatibility, these FDWs develop along specific planes. For the R180 FDW, the {1-10} plane is used, while for R71 and R109, the FDWs are determined by the sum of the two polarization vectors.
 
-- **R71 FDW**: Lies parallel to the diagonal (1-10) plane in the primitive cell.
-- **R180 FDW**: Developed along the {1-10} plane.
-- **R109 FDW**: The R109 FDW lies along the (100) plane, and FDWs are simply developed by stacking the primitive cell along this direction.
+- **R71 FDW**: Lies parallel to the diagonal ```(1-10)``` plane in the primitive cell.
+- **R180 FDW**: Developed along the ```{1-10}``` plane.
+- **R109 FDW**: The R109 FDW lies along the ```(100)``` plane, and FDWs are simply developed by stacking the primitive cell along this direction.
 
 To analyze the R71 and R180 FDWs, the pseudocubic rhombohedral unit cell is transformed into a 10-atom cell by rotating it 45° around the z-axis relative to the parent cubic unit cell. The transformation matrix applied is given as:
 
@@ -53,7 +53,7 @@ a=[1, 1, 0], b=[0, 0, 1], c=[1, -1, 0]
 
 **R71**
 
-The R71 domain walls are developed by stacking along the normal direction to the [1-10] plane, which aligns with the a-axis in the rotated coordinate system. Additionally, the mirror symmtry was developed by tranforming [1-10] to [-110] and from [001] to [00-1].
+The R71 domain walls are developed by stacking along the normal direction to the [1-10] plane, which aligns with the a-axis in the rotated coordinate system. Additionally, the mirror symmtry was developed by tranforming ```[1-10]``` to ```[-110]``` and from ```[001]``` to ```[00-1]```.
 
 For the R71 FDWs, the orientation relationships for both domains (D1 and D2) are:
 
@@ -78,9 +78,9 @@ The transformation ensures that the polarization vectors in the two domains are 
 
 **R109**
 
- The R109 FDW lies along the (100) plane. For this FDW:
+ The R109 FDW lies along the ```(100)``` plane. For this FDW:
  
-- The domain walls are developed by stacking the primitive cell along the (100) direction.
+- The domain walls are developed by stacking the primitive cell along the ```(100)``` direction.
 
 This straightforward stacking ensures that the polarization vectors align as required for the R109 domain wall configuration.
 
@@ -91,7 +91,7 @@ This straightforward stacking ensures that the polarization vectors align as req
 
 ```
 ## R3c
-Similar to the R3m, the R3c structure also possesses three FDWs: R71, R109, and R180.  The R3c domain walls are developed by converting the reference R3c structure into a pseudocubic cell. This is done by cutting along the(1-11) plane, which is also the polarization axis.
+Similar to the R3m, the R3c structure also possesses three FDWs: R71, R109, and R180.  The R3c domain walls are developed by converting the reference R3c structure into a pseudocubic cell. This is done by cutting along the ```(1-11)``` plane, which is also the polarization axis.
 
 The transformation vectors used to convert the R3c structure into a pseudocubic cell are given by the transformation matrix Y:
 
@@ -102,7 +102,7 @@ The transformation vectors used to convert the R3c structure into a pseudocubic 
 
 ```
 
-The R71 , R109 , and R180 domain walls are found to adopt (001), (110), and (-110) pseudocubic domain wall planes, respectively. The transformation matrix to develop respective domains and domain walls are given as:
+The R71 , R109 , and R180 domain walls are found to adopt ```(001)```, ```(110)```, and ```(-110)``` pseudocubic domain wall planes, respectively. The transformation matrix to develop respective domains and domain walls are given as:
 
 ```
 
@@ -121,7 +121,7 @@ The R71 , R109 , and R180 domain walls are found to adopt (001), (110), and (-11
 ```
 
 # Usage
-To execute the code, one should run the dwbuilder command from the command line. Upon running, the user will be prompted to input the name of the input structure file, as well as the domain wall angle and size (expressed in number of unit cells). This script builds the domain wall structure based on the space group of the input structure. For structures with the R3m or P4mm space groups, the polarization directions are assumed to align with the [001] direction. For structures with the R3c space group, a pseudo-cubic structure is first constructed by translating the input rhombohedral axes along ```a=[101], b=[-111], and c=[0-11]```. In the translated axis , the polarization direction is assumed to align with the ```[-110]``` direction.  To construct 109 and 71 domain walls, each crystal system is translated according to specific orientation relationships in order to meet the polarization angle requirement.
+To execute the code, one should run the dwbuilder command from the command line. Upon running, the user will be prompted to input the name of the input structure file, as well as the domain wall angle and size (expressed in number of unit cells). This script builds the domain wall structure based on the space group of the input structure. For structures with the R3m or P4mm space groups, the polarization directions are assumed to align with the ```[001]``` direction. For structures with the R3c space group, a pseudo-cubic structure is first constructed by translating the input rhombohedral axes along ```a=[101], b=[-111], and c=[0-11]```. In the translated axis , the polarization direction is assumed to align with the ```[-110]``` direction.  To construct 109 and 71 domain walls, each crystal system is translated according to specific orientation relationships in order to meet the polarization angle requirement.
 
 However, if you are unsure about the polarization dirction, you can run ```polarization.py``` to determine the polarization direction. This script uses the point charge model and you need to have both optimized ```CONTCAR``` and high symmtry structure ```POSCAR``` files to determine the polarization.
 
@@ -180,7 +180,7 @@ strain along c (%): 0.00
 Domain wall structures and supercells created successfully! Log file written to LOGFILE.txt
 ```
 
-Once you have developed the desired domain wall structure, you can visualize in vesta or ase to further refine domain wall artifacts.  In the above examples, the domain walls are parallel along (001)//(001) planes.
+Once you have developed the desired domain wall structure, you can visualize in vesta or ase to further refine domain wall artifacts.  In the above examples, the domain walls are parallel along ```(001)//(001)``` planes.
 
 So far the [dwbuilder.py](scripts/dwbuilder.py) develops the domain walls for the following space groups along with the assumed polarization directions:
 
