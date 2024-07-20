@@ -65,12 +65,14 @@ For the R71 FDWs, the orientation relationships for both domains (D1 and D2) are
 
 Similar to the R71 domain wall, the R180 {1-10} wall is also parallel to the diagonal plane in the primitive cell. For the R180 FDW:
 - A supercell is made by stacking the rotated 10-atom unit cell.
-- The final FDWs are developed by stacking along the [1-10] plane.
-- 
-         [ 1 0  1 ]         [ -1  0   1 ]          
-    D1 = [ 1 0 -1 ]    D2 = [ -1  0  -1 ]    
-         [ 0 1  0 ]         [  0 -1   0 ]  
+- The final FDWs are developed by stacking along the ```[1-10]``` plane.
 
+```
+         [ 1  0  1 ]         [ -1  0   1 ]          
+    D1 = [ 1  0 -1 ]    D2 = [ -1  0  -1 ]    
+         [ 0  1  0 ]         [  0 -1   0 ]  
+
+```
 
 The transformation ensures that the polarization vectors in the two domains are oriented 180 degrees apart, achieving the necessary mirror symmetry for the R180 domain wall. 
 
