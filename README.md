@@ -96,9 +96,9 @@ Similar to the R3m, the R3c structure also possesses three FDWs: R71, R109, and 
 The transformation vectors used to convert the R3c structure into a pseudocubic cell are given by the transformation matrix Y:
 
 ```
-          [  1 -1  1 ]                
-    T = [  1  1 -1 ]       
-          [ -1  1  1 ]        
+        [ 1 -1  1 ]                
+    T = [ 1  1 -1 ]       
+        [-1  1  1 ]        
 
 ```
 
@@ -106,9 +106,9 @@ The R71 , R109 , and R180 domain walls are found to adopt (001), (110), and (-11
 
 ```
 
-             [ 1  0  1 ]             [-1  0  1 ]          
-    R71_D1 = [-1  0  1 ]    R71_D2 = [ 1  0  1 ]    
-             [ 0  1  0 ]             [ 0 -1  0 ]  
+             [ 1  0  1 ]              [-1  0  1 ]          
+    R71_D1 = [-1  0  1 ]    R71_D2 =  [ 1  0  1 ]    
+             [ 0  1  0 ]              [ 0 -1  0 ]  
 
               [ 0  1  0 ]              [ 0 -1  0 ]          
     R109_D1 = [ 1  0  0 ]    R109_D2 = [-1  0  0 ]    
