@@ -40,9 +40,9 @@ Ferroelectric materials with a rhombohedral space group of R3m exhibit three typ
 
 To analyze the R71 and R180 FDWs, the pseudocubic rhombohedral unit cell is transformed into a 10-atom cell by rotating it 45° around the z-axis relative to the parent cubic unit cell. The transformation matrix applied is given as:
 
-        [ 1 0  1 ]                
-    T = [ 1 0 -1 ]       
-        [ 0 1  0 ]        
+        [ 1  0  1 ]                
+    T = [ 1  0 -1 ]       
+        [ 0  1  0 ]        
 
 In the script the above transformation matrix is applied in lattice vectors form as given below:
 
@@ -57,9 +57,9 @@ The R71 domain walls are developed by stacking along the normal direction to the
 
 For the R71 FDWs, the orientation relationships for both domains (D1 and D2) are:
 
-         [ 1 0  1 ]         [ 1  0 -1 ]          
-    D1 = [ 1 0 -1 ]    D2 = [ 1  0  1 ]    
-         [ 0 1  0 ]         [ 0 -1  0 ]  
+         [ 1  0  1 ]         [ 1  0 -1 ]          
+    D1 = [ 1  0 -1 ]    D2 = [ 1  0  1 ]    
+         [ 0  1  0 ]         [ 0 -1  0 ]  
 
 **R180**
 
@@ -90,6 +90,17 @@ This straightforward stacking ensures that the polarization vectors align as req
          [ 0  1  1 ]         [  0  0   -1 ]  
 
 ```
+## R3c
+Similar to the R3m , R3c also possess three FDWs R71, R109 and R180. The R3c domain walls are developed by converting reference R3c structure into a pseudocubic cell by cutting along (1-11) plane, which is also the polarization axis. The transformation vectors used to convert R3c structure into pseudocubic cell is given as:
+
+```
+          [  1 -1  1 ]                
+    T = [  1  1 -1 ]       
+          [ -1  1  1 ]        
+
+```
+
+The R71 , R109 , and R180 domain walls are found to adopt (001), (110), and (-110) pseudocubic domain wall planes, respectively.
 
 # Usage
 To execute the code, one should run the dwbuilder command from the command line. Upon running, the user will be prompted to input the name of the input structure file, as well as the domain wall angle and size (expressed in number of unit cells). This script builds the domain wall structure based on the space group of the input structure. For structures with the R3m or P4mm space groups, the polarization directions are assumed to align with the [001] direction. For structures with the R3c space group, a pseudo-cubic structure is first constructed by translating the input rhombohedral axes along ```a=[101], b=[-111], and c=[0-11]```. In the translated axis , the polarization direction is assumed to align with the ```[-110]``` direction.  To construct 109 and 71 domain walls, each crystal system is translated according to specific orientation relationships in order to meet the polarization angle requirement.
