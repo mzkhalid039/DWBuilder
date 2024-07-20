@@ -119,6 +119,7 @@ The R71 , R109 , and R180 domain walls are found to adopt ```(001)```, ```(110)`
               [ 0 -1  0 ]              [ 0  1  0 ]  
 
 ```
+The R109 domain walls are developed by stacking along the ```[001]```, while R71 and R180 are stacked along the ```[110]``` and ```[-110]``` directions, respectively. 
 
 # Usage
 To execute the code, one should run the dwbuilder command from the command line. Upon running, the user will be prompted to input the name of the input structure file, as well as the domain wall angle and size (expressed in number of unit cells). This script builds the domain wall structure based on the space group of the input structure. For structures with the R3m or P4mm space groups, the polarization directions are assumed to align with the ```[001]``` direction. For structures with the R3c space group, a pseudo-cubic structure is first constructed by translating the input rhombohedral axes along ```a=[101], b=[-111], and c=[0-11]```. In the translated axis , the polarization direction is assumed to align with the ```[-110]``` direction.  To construct 109 and 71 domain walls, each crystal system is translated according to specific orientation relationships in order to meet the polarization angle requirement.
