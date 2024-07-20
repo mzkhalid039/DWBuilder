@@ -85,9 +85,9 @@ The transformation ensures that the polarization vectors in the two domains are 
 This straightforward stacking ensures that the polarization vectors align as required for the R109 domain wall configuration.
 
 ```
-         [ 1  0  0 ]         [  1  0   0 ]          
-    D1 = [ 0  1  0 ]    D2 = [  0 -1   0 ]    
-         [ 0  1  1 ]         [  0  0   -1 ]  
+         [ 1  0  0 ]         [  1  0  0 ]          
+    D1 = [ 0  1  0 ]    D2 = [  0 -1  0 ]    
+         [ 0  1  1 ]         [  0  0 -1 ]  
 
 ```
 ## R3c
