@@ -38,7 +38,13 @@ Ferroelectric materials with a rhombohedral space group of R3m exhibit three typ
 - **R180 FDW**: Developed along the {1-10} plane.
 - **R109 FDW**: The R109 FDW lies along the (100) plane, and FDWs are simply developed by stacking the primitive cell along this direction.
 
-To analyze the R71 and R180 FDWs, the pseudocubic rhombohedral unit cell is transformed into a 10-atom cell by rotating it 45° around the z-axis relative to the parent cubic unit cell. The lattice vectors used for this transformation are:
+To analyze the R71 and R180 FDWs, the pseudocubic rhombohedral unit cell is transformed into a 10-atom cell by rotating it 45° around the z-axis relative to the parent cubic unit cell. The transformation matrix applied is given as:
+
+        [ 1 0  1 ]                
+    T = [ 1 0 -1 ]       
+        [ 0 1  0 ]        
+
+In the script the above transformation matrix is applied in lattice vectors form as given below:
 
 ```
 a=[1, 1, 0], b=[0, 0, 1], c=[1, -1, 0]
@@ -49,13 +55,14 @@ a=[1, 1, 0], b=[0, 0, 1], c=[1, -1, 0]
 
 The R71 domain walls are developed by stacking along the normal direction to the [1-10] plane, which aligns with the a-axis in the rotated coordinate system. Additionally, the mirror symmtry was developed by tranforming [1-10] to [-110] and from [001] to [00-1].
 
-For the R71 FDWs, the orientation relationships for both domains are:
+For the R71 FDWs, the orientation relationships for both domains (D1 and D2) are:
+```
+
+         [ 1 0  1 ]         [ 1  0 -1 ]          
+    D1 = [ 1 0 -1 ]    D2 = [ 1  0  1 ]    
+         [ 0 1  0 ]         [ 0 -1  0 ]  
 
  ```
-a1=[1, 1, 0], b1=[0, 0, 1], c1=[1, -1, 0]
-a2=[1, 1, 0], b2=[0, 0, -1], c2=[-1, 1, 0]
-
-```
 **R180**
 
 Similar to the R71 domain wall, the R180 {1-10} wall is also parallel to the diagonal plane in the primitive cell. For the R180 FDW:
@@ -81,21 +88,6 @@ This straightforward stacking ensures that the polarization vectors align as req
 a1=[1, 0, 0], b1=[0, 1, 1], c1=[0, 0, 1]
 a2=[1, 0, 0], b2=[0, -1, 0], c2=[0,0 -1]
 ```
-## R3c
-Similar to the R3m , R3c also possess three FDWs R71, R109 and R180. The R3c domain walls are developed by converting reference R3c structure into a pseudocubic cell by cutting along (1-11) plane, which is also the polarization axis. The transformation vectors used to convert R3c structure into pseudocubic cell is given as:
-
-```
-\[
-Pseudocubic_cell = \begin{bmatrix}
-1 & -1 & 1 \\
-1 & 1 & -1 \\
--1 & 1 & 1
-\end{bmatrix}
-\]
-
-```
-
-The R71 , R109 , and R180 domain walls are found to adopt (001), (110), and (-110) pseudocubic domain wall planes, respectively.
 
 # Usage
 To execute the code, one should run the dwbuilder command from the command line. Upon running, the user will be prompted to input the name of the input structure file, as well as the domain wall angle and size (expressed in number of unit cells). This script builds the domain wall structure based on the space group of the input structure. For structures with the R3m or P4mm space groups, the polarization directions are assumed to align with the [001] direction. For structures with the R3c space group, a pseudo-cubic structure is first constructed by translating the input rhombohedral axes along ```a=[101], b=[-111], and c=[0-11]```. In the translated axis , the polarization direction is assumed to align with the ```[-110]``` direction.  To construct 109 and 71 domain walls, each crystal system is translated according to specific orientation relationships in order to meet the polarization angle requirement.
