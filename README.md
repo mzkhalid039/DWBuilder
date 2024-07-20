@@ -32,7 +32,7 @@ After installation, you can start the software by running the following command 
 ```
 # Method for the development of FDW
 ## R3m
-Ferroelectric materials with a rhombohedral space group of R3m exhibit three types of ferroelectric domain walls (FDWs): R71, R109, and R180. Due to neutrality and mechanical compatibility, these FDWs develop along specific planes. For the R180 FDW, the {1-10} plane is used, while for R71 and R109, the FDWs are determined by the sum of the two polarization vectors.
+Ferroelectric materials with a rhombohedral space group of R3m exhibit three types of ferroelectric domain walls (FDWs): R71, R109, and R180. Due to neutrality and mechanical compatibility, these FDWs develop along specific planes. For the R180 FDW, the ```{1-10}``` plane is used, while for R71 and R109, the FDWs are determined by the sum of the two polarization vectors.
 
 - **R71 FDW**: Lies parallel to the diagonal ```(1-10)``` plane in the primitive cell.
 - **R180 FDW**: Developed along the ```{1-10}``` plane.
