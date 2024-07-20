@@ -96,7 +96,7 @@ Similar to the R3m , R3c also possess three FDWs R71, R109 and R180. The R3c dom
 ```
         [ 1 -1  1 ]                
     T = [ 1  1 -1 ]       
-        [ -1 1  1 ]        
+        [-1  1  1 ]        
 
 ```
 
