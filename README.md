@@ -223,8 +223,11 @@ The transformation matrix used for this space group is given as:
 
 ```
 The domain walls lie along the `[110]` direction.   
-References
+
+References:
+
 Barone, Paolo, Domenico Di Sante, and Silvia Picozzi. "Improper origin of polar displacements at CaTiO3 and CaMnO3 twin walls." Physical Review B 89.14 (2014): 144104.
+
 Goncalves-Ferreira, L., Redfern, S.A.T., Artacho, E., Salje, E.K.H. "Ferrielectric twin walls in CaTiO3." Physical Review Letters, 101(9), 097602 (2008).
 
 
