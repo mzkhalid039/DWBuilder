@@ -92,6 +92,7 @@ This straightforward stacking ensures that the polarization vectors align as req
 ```
 
 Reference: 
+
 Taherinejad M, Vanderbilt D, Marton P, Stepkova V, Hlinka J. Bloch-type domain walls in rhombohedral BaTiO3. Physical Review B. 2012 Oct 22;86(15):155138.
 
 ## R3c
@@ -126,6 +127,7 @@ The R71 , R109 , and R180 domain walls are found to adopt ```(001)```, ```(110)`
 The R109 domain walls are formed by stacking the D1 and D2 domains along the ```[001]```, while R71 and R180 are stacked along the ```[110]``` and ```[-110]``` directions, respectively. 
 
 Reference:
+
 Wang Y, Nelson C, Melville A, Winchester B, Shang S, Liu ZK, Schlom DG, Pan X, Chen LQ. BiFeO 3 domain wall energies and structures: a combined experimental and density functional theory+ U study. Physical review letters. 2013 Jun 24;110(26):267601.
 
 ## P4mm
@@ -156,6 +158,7 @@ The transformation matrix used for both domain walls are given as:
 The T180 and T90 FDWs are develed by stacking along the ```[010]``` and ```[101]``` direction.  
 
 Reference: 
+
 Meyer B, Vanderbilt D. Ab initio study of ferroelectric domain walls in PbTiO 3. Physical Review B. 2002 Mar 1;65(10):104111.
 
 ## P6_3cm
@@ -194,6 +197,7 @@ By providing the necessary input structures, these scripts will generate the res
 **Note**: You do not explicitly need to run these scripts directly. `dwbuilder` automatically detects the space group and, based on the space group, prompts users to provide details of the input structure and parameters.
 
 Reference: 
+
 Kumagai Y, Spaldin NA. Structural domain walls in polar hexagonal manganites. Nature communications. 2013 Feb 26;4(1):1540.
 
 # Usage
