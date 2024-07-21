@@ -154,20 +154,36 @@ The hexagonal manganites RMnO3 ( R= Sc, Y, Dy-Lu) belongs to the P6_3cm hexagona
 
 ### Origin of Polarization
 
-The polarization within hexagonal manganites originates from the structural tilt trimerization of the MnO\(_5\) polyhedra. Trimerization is characterized by two angles:
-1. **Tilt Angle (\(\theta\))**:
+The polarization within hexagonal manganites originates from the structural tilt trimerization of the MnO5 polyhedra. Trimerization is characterized by two angles:
+1. **Tilt Angle (θ)**:
    - This is the angle between the `[001]` direction and the Mn-apical O bond.
    - It gives the magnitude of the tilting and can be regarded as the order parameter.
-2. **Azimuthal Angle (\(\phi\))**:
+2. **Azimuthal Angle (φ)**:
    - This angle describes the orientation of the tilting.
-   - During the phase transition, \(\phi\) adopts one of six values separated by 60°, corresponding to trimerization around three possible origins with either in- or out-orientation of the tilting.
+   - During the phase transition, (φ) adopts one of six values separated by 60°, corresponding to trimerization around three possible origins with either in- or out-orientation of the tilting.
+
+Based on the stacking site, there exist two kinds of domain walls within hexagonal manganites:
+
+1. **Neutral Domain Walls (NDW)**:
+   - **Formation**: NDWs are developed by stacking the positive and negative domains perpendicular to the `[001]` axis.
+   - **Polarization**: This stacking creates net zero polarization at the domain walls due to the cancellation of the positive and negative polarization of both domains.
+
+2. **Charged Domain Walls (CDW)**:
+   - **Formation**: CDWs are formed by stacking two different domains along the `[001]` direction.
+   - **Polarization**: This results in a net polarization at the domain walls, leading to charged domain walls.
+
+### Developing Domain Walls with `dwbuilder`
+
+In `dwbuilder`, we have developed two scripts, `ndw.py` and `cdw.py`, to create these domain walls while maintaining hexagonal symmetry. To run these scripts, users need to provide the input domain structures for both domains.
+
+- **`ndw.py`**: This script is used to develop neutral domain walls (NDW).
+- **`cdw.py`**: This script is used to develop charged domain walls (CDW).
+
+By providing the necessary input structures, these scripts will generate the respective domain walls within the hexagonal manganites. 
+
+**Note**: You do not explicitly need to run these scripts directly. `dwbuilder` automatically detects the space group and, based on the space group, prompts users to provide details of the input structure and parameters.
 
 
-The hexagonal manganites RMnO3 ( R= Sc, Y, Dy-Lu) belongs to the P6_3cm hexagonal space group. This space group is non-centrosymmtric thus lacking the inversion symmtry which is the necessary condition for ferroelectricity. The polar axis for this group is along the ```[001]``` direction. The polarization within hexagonal manganites originates due to the structural tilt trimerization of the MnO5 polyhedra The trimerization is characterized by two angles: the angle θ between the ```[001]``` direction and the Mn-apical O bond gives the magnitude of the tilting and can be regarded as the order parameter and an azimuthal angle φ which describes the orientation of the tilting. the phase transition φ adopts one of six values separated by 60, which correspond to trimerization around three possible origins, with in- or out orientation of the tilting; as a result six structural domains emerges. The domain walls can be developed between these 6 domains by stacking it perpendicualar or parallel to the ```[001]``` direction. 
-
-Based on the stacking site, there exist two kinds of domain wall within hexagonal mangnaites, (i) Neutral domain walls (NDW) and (ii) Charged domain walls (CDW). NDWs are developed by stacking the positive and negative domains perpendicular to the ```[001]``` axis, which creates net zero polarization at the domains due to the cancellation of the postiive and negative polarization of both domains. CDWs are formed by stacking the two different domains along the ```[001]``` direction.
-
-In ```dwbuilder```, we have developed two scripts ```ndw.py``` and ```cdw.py``` which develops these domain walls by keeping hexagonal symmtry. To run this user need to provide the input domain structures of the both domains. 
 
 # Usage
 To execute the code, one should run the dwbuilder command from the command line. Upon running, the user will be prompted to input the name of the input structure file, as well as the domain wall angle and size (expressed in number of unit cells). This script builds the domain wall structure based on the space group of the input structure. For structures with the R3m or P4mm space groups, the polarization directions are assumed to align with the ```[001]``` direction. For structures with the R3c space group, a pseudo-cubic structure is first constructed by translating the input rhombohedral axes along ```a=[101], b=[-111], and c=[0-11]```. In the translated axis , the polarization direction is assumed to align with the ```[-110]``` direction.  To construct 109 and 71 domain walls, each crystal system is translated according to specific orientation relationships in order to meet the polarization angle requirement.
