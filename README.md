@@ -194,11 +194,39 @@ In `dwbuilder`, we have developed two scripts, `ndw.py` and `cdw.py`, to create 
 
 By providing the necessary input structures, these scripts will generate the respective domain walls within the hexagonal manganites. 
 
-**Note**: You do not explicitly need to run these scripts directly. `dwbuilder` automatically detects the space group and, based on the space group, prompts users to provide details of the input structure and parameters.
+**Note**: You do not explicitly need to run these scripts directly. `DWBuilder` automatically detects the space group and, based on the space group, prompts users to provide details of the input structure and parameters.
 
 Reference: 
 
 Kumagai Y, Spaldin NA. Structural domain walls in polar hexagonal manganites. Nature communications. 2013 Feb 26;4(1):1540.
+
+## Pnma
+
+The (Pnma) space group is non-polar, yet some materials within this group exhibit ferroelastic domain walls. `DWBuilder` generates domain walls for materials that typically crystallize in a non-polar (Pnma) structure under ambient conditions. This structure features antiferrodistortive (AFD) distortions, involving the tilting and rotation of the oxygen octahedra, which also lead to spontaneous ferroelastic strain.
+
+### Ferroelectric Instability
+
+- **Parent Cubic Phase**: In its parent cubic phase, the material exhibits a secondary ferroelectric (FE) instability.
+- **Polar Displacement**: This instability arises from the polar displacement of ions (e.g., titanium ions within the oxygen octahedra), leading to ferroelectric polarization.
+
+### Domain Walls
+
+`DWBuilder` generates twin ferroelastic domain walls between the `[110]` and `[1-10]` domains. These walls suppress the primary AFD order parameter, activating the secondary FE instability at the twin walls. Consequently, these twin domain walls possess their own dipole moments within a ferroelastic paraelectric matrix, contributing to the overall properties of the material.
+
+The transformation matrix used for this space group is given as:
+
+```
+
+              [ 1  0  1 ]               [ -1  0   1 ]          
+         D1 = [ 1  0 -1 ]         D2 =  [  1  0   1 ]    
+              [ 0  1  0 ]               [  0  1   0 ]  
+
+```
+The domain walls lie along the `[110]` direction.   
+References
+Barone, Paolo, Domenico Di Sante, and Silvia Picozzi. "Improper origin of polar displacements at CaTiO3 and CaMnO3 twin walls." Physical Review B 89.14 (2014): 144104.
+Goncalves-Ferreira, L., Redfern, S.A.T., Artacho, E., Salje, E.K.H. "Ferrielectric twin walls in CaTiO3." Physical Review Letters, 101(9), 097602 (2008).
+
 
 # Usage
 To execute the code, one should run the dwbuilder command from the command line. Upon running, the user will be prompted to input the name of the input structure file, as well as the domain wall angle and size (expressed in number of unit cells). This script builds the domain wall structure based on the space group of the input structure. For structures with the R3m or P4mm space groups, the polarization directions are assumed to align with the ```[001]``` direction. For structures with the R3c space group, a pseudo-cubic structure is first constructed by translating the input rhombohedral axes along ```a=[101], b=[-111], and c=[0-11]```. In the translated axis , the polarization direction is assumed to align with the ```[-110]``` direction.  To construct 109 and 71 domain walls, each crystal system is translated according to specific orientation relationships in order to meet the polarization angle requirement.
