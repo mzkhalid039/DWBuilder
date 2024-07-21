@@ -121,6 +121,33 @@ The R71 , R109 , and R180 domain walls are found to adopt ```(001)```, ```(110)`
 ```
 The R109 domain walls are formed by stacking the D1 and D2 domains along the ```[001]```, while R71 and R180 are stacked along the ```[110]``` and ```[-110]``` directions, respectively. 
 
+## P4mm
+In the P4mm space group, with the polarization direction along the `[001]` direction, there are two types of domain walls allowed and developed in `dwbuilder`:
+
+1. **T180 Domain Walls (T180)**:
+   - ***Orientation**: These domain walls are on the `(100)` planes.
+   - ***Polarization**: The polarization vectors in neighboring domains are parallel but oriented in opposite directions.
+
+2. **T90 Domain Walls**:
+   - ***Orientation**: These domain walls are on the `(101)` planes.
+   - ***Polarization**: The polarization vectors on either side of the domain wall are almost perpendicular to each other.
+
+The transformation matrix used for both domain walls are given as:
+
+```
+
+                       [ 1  0  0 ]                        [ -1  0   0 ]          
+    T180_D1 = [ 0  1  0 ]    T180_D2 =  [  0  1    0 ]    
+                       [ 0  0  1 ]                        [  0  0  -1 ]  
+
+                     [ 0  -1  1 ]                     [ 0  -1   1 ]          
+    T90_D1 = [ 1   0  0 ]    T90_D2 = [ -1   0   0 ]    
+                     [ 0   1  1 ]                     [ 0   -1   1 ]  
+
+```
+
+The T180 and T90 FDWs are develed by stacking along the ```[010]``` and ```[101]``` direction.  
+
 # Usage
 To execute the code, one should run the dwbuilder command from the command line. Upon running, the user will be prompted to input the name of the input structure file, as well as the domain wall angle and size (expressed in number of unit cells). This script builds the domain wall structure based on the space group of the input structure. For structures with the R3m or P4mm space groups, the polarization directions are assumed to align with the ```[001]``` direction. For structures with the R3c space group, a pseudo-cubic structure is first constructed by translating the input rhombohedral axes along ```a=[101], b=[-111], and c=[0-11]```. In the translated axis , the polarization direction is assumed to align with the ```[-110]``` direction.  To construct 109 and 71 domain walls, each crystal system is translated according to specific orientation relationships in order to meet the polarization angle requirement.
 
