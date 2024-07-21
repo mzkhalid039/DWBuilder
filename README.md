@@ -125,8 +125,8 @@ The R109 domain walls are formed by stacking the D1 and D2 domains along the ```
 In the P4mm space group, with the polarization direction along the `[001]` direction, there are two types of domain walls allowed and developed in `dwbuilder`:
 
 1. **T180 Domain Walls (T180)**:
-   - ***Orientation**: These domain walls are on the `(100)` planes.
-   - ***Polarization**: The polarization vectors in neighboring domains are parallel but oriented in opposite directions.
+   - **Orientation**: These domain walls are on the `(100)` planes.
+   - **Polarization**: The polarization vectors in neighboring domains are parallel but oriented in opposite directions.
 
 2. **T90 Domain Walls**:
    - ***Orientation**: These domain walls are on the `(101)` planes.
@@ -136,13 +136,13 @@ The transformation matrix used for both domain walls are given as:
 
 ```
 
-                       [ 1  0  0 ]                        [ -1  0   0 ]          
-    T180_D1 = [ 0  1  0 ]    T180_D2 =  [  0  1    0 ]    
-                       [ 0  0  1 ]                        [  0  0  -1 ]  
+              [ 1  0  0 ]               [ -1  0   0 ]          
+    T180_D1 = [ 0  1  0 ]    T180_D2 =  [  0  1   0 ]    
+              [ 0  0  1 ]               [  0  0  -1 ]  
 
-                     [ 0  -1  1 ]                     [ 0  -1   1 ]          
-    T90_D1 = [ 1   0  0 ]    T90_D2 = [ -1   0   0 ]    
-                     [ 0   1  1 ]                     [ 0   -1   1 ]  
+             [ 0  -1  1 ]             [ 0  -1   1 ]          
+    T90_D1 = [ 1   0  0 ]    T90_D2 = [ -1  0   0 ]    
+             [ 0   1  1 ]             [ 0  -1   1 ]  
 
 ```
 
