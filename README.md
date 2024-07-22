@@ -254,7 +254,9 @@ The Pmc2_1 and Amm2 space groups belong to the orthorhombic crystal system. Mate
          Rb = [ 1  0  0 ]         Rz =  [  0  0   1 ]    
               [ 0  1  0 ]               [  1  0   0 ]  
 ```
+    
     - After aligning the a-axis as the polar axis, `DWBuilder` applies the rotation matrix around the z-axis using the following relation:
+
 
 ```
 
