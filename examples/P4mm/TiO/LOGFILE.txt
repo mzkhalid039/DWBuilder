@@ -1,0 +1,25 @@
+Space group number: 99
+International symbol: P4mm
+Lattice type: tetragonal
+System selection: 3
+Domain wall angle: DomainWallAngle.ALL
+Domain wall size: 4.0 unit cells
+Supercell size: a=1, b=1, c=1
+Cutoff distance: 0.5 angstroms
+Stacked slab saved to T180_stacked.vasp
+Domain slab 1 saved to T180_domain1.vasp
+Domain slab 2 saved to T180_domain2.vasp
+Lattice strain for T180 DW:
+strain along a (%): 0.00
+strain along b (%): 0.00
+strain along c (%): 0.00
+Supercell saved to T180_supercell.vasp
+Stacked slab saved to T90_stacked.vasp
+Domain slab 1 saved to T90_domain1.vasp
+Domain slab 2 saved to T90_domain2.vasp
+Lattice strain for T90 DW:
+strain along a (%): 0.00
+strain along b (%): 0.00
+strain along c (%): 0.00
+Supercell saved to T90_supercell.vasp
+Domain wall structures and supercells created successfully!
