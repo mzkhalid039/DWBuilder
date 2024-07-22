@@ -271,7 +271,7 @@ class DomainWallManager:
             return list(DomainWallAngle)
 
     def prompt_domain_size(self):
-        size = int(input("Enter the domain wall size (in number of unit cells): "))
+        size = float(input("Enter the domain wall size (in number of unit cells): "))
         self.log.append(f"Domain wall size: {size} unit cells")
         return size
 
