@@ -257,15 +257,14 @@ The Pmc2_1 and Amm2 space groups belong to the orthorhombic crystal system. Mate
    - `DWBuilder` ensures that the polar axis does not lie along the z-axis before applying the rotation matrix.
    - If the user selects the a-axis as the polar axis, the structure is kept as is.
    - If the b-axis or c-axis is selected as the polar axis, the structure is rotated by applying a transformation matrix as given below, aligning the a-axis as the polar axis.
-     
+   - After aligning the a-axis as the polar axis, `DWBuilder` applies the rotation matrix around the z-axis by applying `(Rz(γ))`.
+
 ```
               [ 0  0  1 ]               [  0  1   0 ]          
          Rb = [ 1  0  0 ]         Rz =  [  0  0   1 ]    
               [ 0  1  0 ]               [  1  0   0 ]  
 ```
     
-    - After aligning the a-axis as the polar axis, `DWBuilder` applies the rotation matrix around the z-axis by applying `(Rz(γ))`.
-
 # Usage
 To execute the code, one should run the dwbuilder command from the command line. Upon running, the user will be prompted to input the name of the input structure file, as well as the domain wall angle and size (expressed in number of unit cells). This script builds the domain wall structure based on the space group of the input structure. For structures with the R3m or P4mm space groups, the polarization directions are assumed to align with the ```[001]``` direction. For structures with the R3c space group, a pseudo-cubic structure is first constructed by translating the input rhombohedral axes along ```a=[101], b=[-111], and c=[0-11]```. In the translated axis , the polarization direction is assumed to align with the ```[-110]``` direction.  To construct 109 and 71 domain walls, each crystal system is translated according to specific orientation relationships in order to meet the polarization angle requirement.
 
