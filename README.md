@@ -248,12 +248,11 @@ The Pmc2_1 and Amm2 space groups belong to the orthorhombic crystal system. Mate
    - `DWBuilder` ensures that the polar axis does not lie along the z-axis before applying the rotation matrix.
    - If the user selects the a-axis as the polar axis, the structure is kept as is.
    - If the b-axis or c-axis is selected as the polar axis, the structure is rotated by applying a transformation matrix as given below, aligning the a-axis as the polar axis.
+     
 ```
-
               [ 0  0  1 ]               [  0  1   0 ]          
          Rb = [ 1  0  0 ]         Rz =  [  0  0   1 ]    
               [ 0  1  0 ]               [  1  0   0 ]  
-
 ```
     - After aligning the a-axis as the polar axis, `DWBuilder` applies the rotation matrix around the z-axis using the following relation:
 
