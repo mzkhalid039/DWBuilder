@@ -215,7 +215,7 @@ class DomainWallManager:
             space_groups = ["R3c", "R3m", "P4mm", "Pmc2_1", "Pnma", "P6_3cm"]
             space_group = space_groups[self.system_selection - 1]
             angle_selection = self.prompt_domain_wall_angle()
-            domain_size = int(input("Enter the domain wall size (in number of unit cells): "))
+            domain_size = float(input("Enter the domain wall size (in number of unit cells): "))
             cutoff = float(input("Enter the cutoff distance in angstroms to remove close atoms: "))
             supercell_size = None
             if input("Do you want to create a supercell? (y/n): ").lower() == 'y':
