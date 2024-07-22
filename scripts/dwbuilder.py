@@ -122,7 +122,7 @@ def get_angles_dict(domain_size):
             ],
             DomainWallAngle.O90: [
                 {'a': [0, 1*domain_size, 0], 'b': [-1, 0, 0], 'c': [0, 0, 1], 'stack_axis': 0},
-                {'a': [-1*domain_size, 0, 0], 'b': [0, -1, 0], 'c': [0, 0, 1], 'stack_axis': 0}
+                {'a': [0, -1*domain_size, 0], 'b': [0, -1, 0], 'c': [0, 0, 1], 'stack_axis': 0}
             ]
         }
     }
