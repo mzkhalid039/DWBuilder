@@ -232,7 +232,7 @@ Goncalves-Ferreira, L., Redfern, S.A.T., Artacho, E., Salje, E.K.H. "Ferrielectr
 
 ## Pmc2_1 & Amm2
 
-The Pmc2_1 and Amm2 space groups belong to the orthorhombic crystal system. Materials within these space groups can exhibit O90 and O180 (O for orthorhombic) domain walls. `DWBuilder` generates these domain walls by applying a rotation matrix around the z-axis.
+The Pmc2_1 and Amm2 space groups belong to the orthorhombic crystal system. Materials within these space groups can exhibit O90 and O180 (O for orthorhombic) domain walls. `DWBuilder` generates these domain walls by applying a rotation matrix around the c-axis.
 
 ### Procedure
 
@@ -242,27 +242,27 @@ The Pmc2_1 and Amm2 space groups belong to the orthorhombic crystal system. Mate
 
 2. **Rotation Matrix Application**:
    - Based on the user selection, `DWBuilder` applies the rotation matrix to develop the domain walls.
-   - The rotation matrix is applied around the z-axis.
+   - The rotation matrix is applied around the c-axis.
 
  ```
 
               [ cos(γ)  -sin(γ)  1 ]                    
-      Rz(γ) = [ sin(γ)   cos(γ) -1 ]        
+      Rc(γ) = [ sin(γ)   cos(γ) -1 ]        
               [ 0         0      0 ]               
 
 ```
 
 
 3.  **Polar Axis Adjustment**:
-   - `DWBuilder` ensures that the polar axis does not lie along the z-axis before applying the rotation matrix.
+   - `DWBuilder` ensures that the polar axis does not lie along the c-axis before applying the rotation matrix.
    - If the user selects the a-axis as the polar axis, the structure is kept as is.
    - If the b-axis or c-axis is selected as the polar axis, the structure is rotated by applying a transformation matrix as given below, aligning the a-axis as the polar axis.
-   - After aligning the a-axis as the polar axis, `DWBuilder` applies the rotation matrix around the z-axis by applying `(Rz(γ))`.
+   - After aligning the a-axis as the polar axis, `DWBuilder` applies the rotation matrix around the c-axis by applying `(Rc(γ))`.
 
 ```
-              [ 0  0  1 ]               [  0  1   0 ]          
-         Rb = [ 1  0  0 ]         Rz =  [  0  0   1 ]    
-              [ 0  1  0 ]               [  1  0   0 ]  
+       [ 1  0  0 ]       [ 0  0  1 ]               [  0  1   0 ]          
+ Ra =  [ 0  1  0 ]  Rb = [ 1  0  0 ]         Rc =  [  0  0   1 ]    
+       [ 0  0  1 ]       [ 0  1  0 ]               [  1  0   0 ]  
 ```
 
 3.  **O120 Head-to-Head/Tail-to-Tail and Head-to-Tail domain walls**:
