@@ -265,6 +265,9 @@ The Pmc2_1 and Amm2 space groups belong to the orthorhombic crystal system. Mate
               [ 0  1  0 ]               [  1  0   0 ]  
 ```
 
+3.  **O120 Head-to-Head/Tail-to-Tail and Head-to-Tail domain walls**:
+For O120 domain walls, `DWBuilder` builds two variants: Head-to-Head/Tail-to-Tail (O120_HH_TT) and Head-to-Tail (O120_HT) domain walls. The O120_HH_TT domain wall is developed by stacking the rotated domains parallel to each other, resulting in polarization meeting head-to-head on one end and tail-to-tail on the other side due to the periodic boundary condition. In contrast, the O120_HT domain wall is developed by stacking the rotated domains perpendicular to each other, ensuring a head-to-tail configuration.
+
 ## - _**A note on the selection of domain wall termination sites:**_
 
 `DWBuilder` develops domain wall supercells by generating and stacking two different domains, with the termination of the domains depending on the input unit cell termination. For example, PbTiO3 in the P4mm space group can have TiO- or PbO-terminated domain wall structures. To develop both variants, the user needs to define the input unit cell structure such that in one variant, the Pb atom is in the center, leading to PbO-terminated domain walls, while in the other, the Ti atom is in the center, resulting in TiO-terminated domain walls (See [example](examples/P4mm)). Additionally, for complex systems, `DWBuilder` includes a function to add one or two layers by defining the domain size in fractional form (e.g., 2.5), providing precise control over the domain wall structure and thickness.
