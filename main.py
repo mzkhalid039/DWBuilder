@@ -51,6 +51,7 @@ def main():
         '6': 'supercell.py',
         '7': 'vasp2cif.py',
         '8': 'bondanalysis.py'
+        '9': 'rotationmatrix.py'
 
     }
 
