@@ -50,7 +50,7 @@ def main():
         '5': 'polarization.py',
         '6': 'supercell.py',
         '7': 'vasp2cif.py',
-        '8': 'bondanalysis.py'
+        '8': 'bondanalysis.py',
         '9': 'rotationmatrix.py'
 
     }
