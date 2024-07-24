@@ -286,7 +286,7 @@ Pmc2_1 (user-defined)
 Amm2 (user-defined)
 ```
 
-However, if you are unsure about the polarization dirction, you can run ```polarization.py``` to determine the polarization direction. This script uses the point charge model and you need to have both optimized ```CONTCAR``` and high symmtry structure ```POSCAR``` files to determine the polarization.
+However, if you are unsure about the polarization dirction, you can run [polarization.py](scripts/polarization.py) to determine the polarization direction. This script uses the point charge model and you need to have both optimized ```CONTCAR``` and high symmtry structure ```POSCAR``` files to determine the polarization.
 
 ## Example of using [dwbuilder.py](scripts/dwbuilder.py)
 _ex:_
