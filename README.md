@@ -274,7 +274,17 @@ For O120 domain walls, `DWBuilder` builds two variants: Head-to-Head/Tail-to-Tai
 `DWBuilder` develops domain wall supercells by generating and stacking two different domains, with the termination of the domains depending on the input unit cell termination. For example, PbTiO3 in the P4mm space group can have TiO- or PbO-terminated domain wall structures. To develop both variants, the user needs to define the input unit cell structure such that in one variant, the Pb atom is in the center, leading to PbO-terminated domain walls, while in the other, the Ti atom is in the center, resulting in TiO-terminated domain walls (See [example](examples/P4mm)). Additionally, for complex systems, `DWBuilder` includes a function to add one or two layers by defining the domain size in fractional form (e.g., 2.5), providing precise control over the domain wall structure and thickness.
 
 # Usage
-To execute the code, one should run the dwbuilder command from the command line. Upon running, the user will be prompted to input the name of the input structure file, as well as the domain wall angle and size (expressed in number of unit cells). This script builds the domain wall structure based on the space group of the input structure. For structures with the R3m or P4mm space groups, the polarization directions are assumed to align with the ```[001]``` direction. For structures with the R3c space group, a pseudo-cubic structure is first constructed by translating the input rhombohedral axes along ```a=[101], b=[-111], and c=[0-11]```. In the translated axis , the polarization direction is assumed to align with the ```[-110]``` direction.  To construct 109 and 71 domain walls, each crystal system is translated according to specific orientation relationships in order to meet the polarization angle requirement.
+To execute the code, one should run the dwbuilder command from the command line. Upon running, the user will be prompted to input the name of the input structure file, as well as the domain wall angle and size (expressed in number of unit cells). This script builds the domain wall structure based on the space group of the input structure with the assumed polarization directions as indicated below. 
+
+```
+R3c (Polarization direction (1-11))
+R3m (Polarization direction (001))
+P4mm (Polarization direction (001))
+p6_3cm (Polarization direction (-1-10))
+Pnma (Polarization direction (110))
+Pmc2_1 (user-defined)
+Amm2 (user-defined)
+```
 
 However, if you are unsure about the polarization dirction, you can run ```polarization.py``` to determine the polarization direction. This script uses the point charge model and you need to have both optimized ```CONTCAR``` and high symmtry structure ```POSCAR``` files to determine the polarization.
 
@@ -333,20 +343,7 @@ strain along c (%): 0.00
 Domain wall structures and supercells created successfully! Log file written to LOGFILE.txt
 ```
 
-Once you have developed the desired domain wall structure, you can visualize in vesta or ase to further refine domain wall artifacts.  In the above examples, the domain walls are parallel along ```(001)//(001)``` planes.
-
-So far the [dwbuilder.py](scripts/dwbuilder.py) develops the domain walls for the following space groups along with the assumed polarization directions:
-
-```
-R3c (Polarization direction (1-11))
-R3m (Polarization direction (001))
-P4mm (Polarization direction (001))
-p6_3cm (Polarization direction (-1-10))
-Pnma (Polarization direction (110))
-Pmc2_1 (user-defined)
-Amm2 (user-defined)
-```
-
+Once you have developed the desired domain wall structure, you can visualize in vesta or ase to further refine domain wall artifacts. 
 
 ## Example of using [hibuilder.py](scripts/hibuilder.py)
 In this example, I have reproduced an orientation relationship reported in the following article [CMS](https://www.sciencedirect.com/science/article/pii/S0927025621000446). 
