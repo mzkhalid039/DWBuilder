@@ -308,10 +308,11 @@ _ex:_
     ***************************************************
     
 Select a script to run:
-1: dwbuilder.py                5: polarization.py
-2: dbuilder.py                 6: supercell.py
-3: hibuilder.py                7: vasp2cif.py
-4: slab.py                     8: bondanalysis.py
+1: dwbuilder.py                6: supercell.py
+2: dbuilder.py                 7: vasp2cif.py
+3: hibuilder.py                8: bondanalysis.py
+4: slab.py                     9: rotationmatrix.py
+5: polarization.py             
 Enter the number of the script to run: 1
 Enter the input file name (with extension): BiFeO3_R3c.vasp
 Space group number: 161
@@ -365,10 +366,11 @@ In this example, I have reproduced an orientation relationship reported in the f
     ***************************************************
     
 Select a script to run:
-1: dwbuilder.py                5: polarization.py
-2: dbuilder.py                 6: supercell.py
-3: hibuilder.py                7: vasp2cif.py
-4: slab.py                     8: bondanalysis.py
+1: dwbuilder.py                6: supercell.py
+2: dbuilder.py                 7: vasp2cif.py
+3: hibuilder.py                8: bondanalysis.py
+4: slab.py                     9: rotationmatrix.py
+5: polarization.py             
 Enter the number of the script to run: 3
 Enter the bulk phase 1file name (with extension): Fe_unitcell.vasp
 Enter the bulk phase 2 file name (with extension): Fe2Al5.vasp
