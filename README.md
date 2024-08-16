@@ -264,7 +264,7 @@ The Pmc2_1 and Amm2 space groups belong to the orthorhombic crystal system. Mate
        [ 0  0  1 ]       [ 0  1  0 ]        [ 1  0  0 ]  
 ```
 
-3.  **O120 Head-to-Head/Tail-to-Tail and Head-to-Tail domain walls**:
+4.  **O120 Head-to-Head/Tail-to-Tail and Head-to-Tail domain walls**:
 
 For O120 domain walls, `DWBuilder` builds two variants: Head-to-Head/Tail-to-Tail (O120_HH_TT) and Head-to-Tail (O120_HT) domain walls. The O120_HH_TT domain wall is developed by stacking the rotated domains parallel to each other, resulting in polarization meeting head-to-head on one end and tail-to-tail on the other side due to the periodic boundary condition. In contrast, the O120_HT domain wall is developed by stacking the rotated domains perpendicular to each other, ensuring a head-to-tail configuration.
 
