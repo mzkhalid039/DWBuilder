@@ -1,5 +1,6 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/mzkhalid039/DWBuilder)
 [![status](https://joss.theoj.org/papers/eeae372c75342085351f92af4ca165db/status.svg)](https://joss.theoj.org/papers/eeae372c75342085351f92af4ca165db)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13367853.svg)](https://doi.org/10.5281/zenodo.13367853)
 
 
 # DWBuilder: Domain Wall Builder
