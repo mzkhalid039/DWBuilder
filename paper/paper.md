@@ -83,7 +83,7 @@ The following example illustrates the use of the `hibuilder.py` script. This scr
 
 Figure 3 illustrates an example of the interface structure between Fe and Fe$_2$Al$_5$. This example is taken from the study by [@khalid2020ab]. 
 
- ![ ![Illustration of the `hibuilder.py` script used to build the interface structures between (a) Fe and (b) Fe$_2$Al$_5$. The transformed bulk structures are shown in (c) and (d) respectively. The final interface structure is created by stacking the transformed bulk phases so that Fe_{[22-2]} is parallel to Fe$_2$Al$_5$_{100}. (e) The interface structure can be further optimized by defining the optimal distance between the two bulk phases.  \label{fig:3}](dwbuilder_example){width="100%"}\label{fig:2}](dwbuilder-example){width="100%"}
+ ![ ![Illustration of the `hibuilder.py` script used to build the interface structures between (a) Fe and (b) Fe$_2$Al$_5$. The transformed bulk structures are shown in (c) and (d) respectively. The final interface structure is created by stacking the transformed bulk phases so that Fe_{[22-2]} is parallel to Fe$_2$Al$_5$_{100}. (e) The interface structure can be further optimized by defining the optimal distance between the two bulk phases.  \label{fig:3}](hibuild-example){width="100%"}
 
 # Acknowledgements
 
