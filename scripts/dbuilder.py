@@ -1,3 +1,60 @@
+#!/usr/bin/env python
+
+"""
+Script: domain_wall_manager.py
+Description:
+    This script is designed to manage the creation of domain wall structures using atomic structure files.
+    It supports different symmetry groups and domain wall angles, allowing for the creation and manipulation 
+    of slabs and supercells based on user inputs. The script also offers options to convert structures into 
+    CIF and XYZ formats.
+
+Key Features:
+    - Supports various symmetry groups including R3c, R3m, P4mm, Pmc2_1, Pnma, and P6_3cm.
+    - Handles different domain wall angles like R180, R71, R109, T180, T90, and more.
+    - Automatically cuts and rotates slabs based on user-specified lattice directions.
+    - Removes close atoms based on a user-defined cutoff distance to clean up the structure.
+    - Creates supercells and saves them in VASP POSCAR format.
+    - Converts structures into CIF and XYZ formats for broader compatibility with other tools.
+    - Logs all operations to a "LOGFILE.txt" for easy review of the process.
+
+Usage:
+    - The script is interactive and prompts the user for various inputs, including file names, 
+      symmetry group selections, domain wall sizes, cutoff distances, and more.
+    - Run the script by executing `python domain_wall_manager.py` and follow the prompts.
+
+Dependencies:
+    - ASE (Atomic Simulation Environment): For handling atomic structures, cutting, rotating, and file I/O.
+    - Pymatgen: For analyzing crystal symmetry and converting structures.
+    - Numpy: For numerical operations.
+    - Colorama: For colored text output in the terminal.
+    - Enum: For managing domain wall angle types.
+
+Functions and Classes:
+    - DomainWallAngle (Enum): Defines various domain wall angles.
+    - get_angles_dict(domain_size): Returns a dictionary of domain wall configurations based on symmetry groups.
+    - print_symmetry_info(sym, log): Logs and prints symmetry information of the input structure.
+    - cut_and_rotate(D1, a, b, c): Cuts and rotates the slab according to the given lattice directions.
+    - remove_close_atoms(atoms, cutoff): Removes atoms that are too close to each other based on a cutoff distance.
+    - DomainWallManager (Class): Manages the entire domain wall creation process, from file reading to slab processing.
+
+Execution:
+    - When run, the script will prompt the user to input a file name and select a system.
+    - The script then guides the user through the creation of domain wall structures, offering options 
+      for manual orientation or automatic generation based on predefined symmetry groups and angles.
+    - Finally, the script can convert and save the structures in different formats and logs all operations.
+
+Example:
+    $ python dbuilder.py
+    Enter the input file name (with extension): input_file.vasp
+    ...
+
+Output:
+    - The script produces VASP POSCAR files for the created domain wall structures and supercells.
+    - Optional CIF and XYZ files can be generated.
+    - A detailed log of all operations is saved to "LOGFILE.txt".
+"""
+
+
 import os
 import ase.io
 from ase.build import cut, rotate
