@@ -62,7 +62,8 @@ The below example demonstrates the functionality and steps of the `dwbuilder.py`
     - The script generates the final domain wall structures.
     - It prints any lattice misfit information.
 
- ![Structure of the `DWBuilder` package.\label{fig:2}](dwbuilder-example){width="100%"}
+ ![ ![Illustration of domain wall structures in PbTiO$_3$ and YMnO$_3$ using the `dwbuilder.py` script. PbTiO$_3$, a proper ferroelectric belonging to the tetragonal P4mm space group, exhibits a polar axis along the c-axis in the primitive unit cell structure, as shown in (a). The `DWBuilder` script automatically determines the space group and constructs the (b) T90 and (c) T180 domain wall structures. For YMnO$_3$, with two domain structures, (d) am and (e) bp, both exhibiting polarization along the c-axis, the script generates (f) neutral domain walls by stacking the domains along the b-axis and (g) charged domain walls by stacking them along the c-axis.\label{fig:2}](dwbuilder_example){width="100%"}
+\label{fig:2}](dwbuilder-example){width="100%"}
 
 Figure 2 illustrates an example of P4mm PbTiO$_3$ and hexagonal manganite YMnO$_3$ domain wall structures.
 
