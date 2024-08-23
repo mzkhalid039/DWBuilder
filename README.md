@@ -29,6 +29,149 @@ After installation, you can start the software by running the following command 
 ```
 > dwbuilder
 ```
+
+# Usage
+To execute the code, one should run the dwbuilder command from the command line. Upon running, the user will be prompted to input the name of the input structure file, as well as the domain wall angle and size (expressed in number of unit cells). This script builds the domain wall structure based on the space group of the input structure with the assumed polarization directions as indicated below. 
+
+```
+R3c (Polarization direction (1-11))
+R3m (Polarization direction (001))
+P4mm (Polarization direction (001))
+p6_3cm (Polarization direction (-1-10))
+Pnma (Polarization direction (110))
+Pmc2_1 (user-defined)
+Amm2 (user-defined)
+```
+
+However, if you are unsure about the polarization dirction, you can run [polarization.py](scripts/polarization.py) to determine the polarization direction. This script uses the point charge model and you need to have both optimized ```CONTCAR``` and high symmtry structure ```POSCAR``` files to determine the polarization.
+
+## Example of using [dwbuilder.py](scripts/dwbuilder.py)
+_ex:_
+
+```
+> dwbuilder
+
+    ***************************************************
+    *                                                 *
+    *                Welcome to DWBuilder             *
+    *                                                 *
+    ***************************************************
+    *        Hey, you must know what you are doing.   *
+    *  Otherwise, you might get wrong results.        *
+    ***************************************************
+    *     Core Developer: M.Z.Khalid                  *
+    *     Main Contributors: S.M.Selbach              *
+    *     Email: zeeshan.khalid039@gmail.com          *
+    ***************************************************
+    
+Select a script to run:
+1: dwbuilder.py                6: supercell.py
+2: dbuilder.py                 7: vasp2cif.py
+3: hibuilder.py                8: bondanalysis.py
+4: slab.py                     9: rotationmatrix.py
+5: polarization.py             
+Enter the number of the script to run: 1
+Enter the input file name (with extension): BiFeO3_R3c.vasp
+Space group number: 161
+International symbol: R3c
+Lattice type: rhombohedral
+Select the domain wall angle:
+R180 - R180
+R71 - R71
+R109 - R109
+ALL - ALL
+ALL
+Enter the domain wall size (in number of unit cells): 3
+Enter the size of the supercell along the a direction: 1
+Enter the size of the supercell along the b direction: 1
+Enter the size of the supercell along the c direction: 1
+Enter the cutoff distance in angstroms to remove close atoms: 0
+Lattice strain for R109 DW:
+strain along a (%): 0.00
+strain along b (%): 0.00
+strain along c (%): 0.00
+Lattice strain for R71 DW:
+strain along a (%): 0.00
+strain along b (%): 0.00
+strain along c (%): 0.00
+Lattice strain for R180 DW:
+strain along a (%): 0.00
+strain along b (%): 0.00
+strain along c (%): 0.00
+Domain wall structures and supercells created successfully! Log file written to LOGFILE.txt
+```
+
+Once you have developed the desired domain wall structure, you can visualize in vesta or ase to further refine domain wall artifacts. 
+
+## Example of using [hibuilder.py](scripts/hibuilder.py)
+In this example, I have reproduced an orientation relationship reported in the following article [CMS](https://www.sciencedirect.com/science/article/pii/S0927025621000446). 
+
+```
+> dwbuilder
+
+    ***************************************************
+    *                                                 *
+    *                Welcome to DWBuilder             *
+    *                                                 *
+    ***************************************************
+    *        Hey, you must know what you are doing.   *
+    *  Otherwise, you might get wrong results.        *
+    ***************************************************
+    *     Core Developer: M.Z.Khalid                  *
+    *     Main Contributors: S.M.Selbach              *
+    *     Email: zeeshan.khalid039@gmail.com          *
+    ***************************************************
+    
+Select a script to run:
+1: dwbuilder.py                6: supercell.py
+2: dbuilder.py                 7: vasp2cif.py
+3: hibuilder.py                8: bondanalysis.py
+4: slab.py                     9: rotationmatrix.py
+5: polarization.py             
+Enter the number of the script to run: 3
+Enter the bulk phase 1file name (with extension): Fe_unitcell.vasp
+Enter the bulk phase 2 file name (with extension): Fe2Al5.vasp
+Bulk phase 1 Space group number: 229
+Bulk phase 1 International symbol: lm-3m
+Bulk phase 1 Lattice type: cubic
+Bulk phase 2 Space group number: 63
+Bulk phase 2 International symbol: Cmcm
+Bulk phase 2 Lattice type: orthrhombic
+Enter three comma-separated values for bulk 1 lattice direction a: 1,0,1
+Enter three comma-separated values for bulk 1 lattice direction b: 1.5,1.5,-1.5
+Enter three comma-separated values for bulk 1 lattice direction c: -2,4,2
+Enter three comma-separated values for bulk 2 lattice direction a: 0,0,-1
+Enter three comma-separated values for bulk 2 lattice direction b: 1,0,0
+Enter three comma-separated values for bulk 2 lattice direction c: 0,-2,0
+Enter the stacking direction 0 for a, 1 for b and 2 for c): 2
+strain along a (%): 1.1378
+strain along b (%): -0.5492
+strain along c (%): 8.2378
+Angular strain along a (radians): 0.0
+Angular strain along b (radians): 0.0
+Angular strain along c (radians): 0.0
+Warning: This code could generate interface/domain wall artifacts (i.e., Oxygen atoms, duplicate atoms etc,) at the interface, thus it requires manual adjustment.
+```
+[hibuilder.py](scripts/hibuilder.py) generates an initial configuration that needs additional refinement along a, b and c-directions. To determine the optimal interface distance along the a, b, and c axes, you can either perform static DFT or forcefield simulations. Additionally, you may need to explore various interfacial configurations to identify the thermodynamically stable structure.
+
+The above code generates the following interface structure (the periodic image) visualized by [VESTA](https://jp-minerals.org/vesta/en/):
+
+![image](https://github.com/mzkhalid039/DWBuilder/assets/52278972/19081982-1949-4e16-a734-ca27a6d733bb)
+
+It is also important to know that all the domain wall and interface structures built in this package follow the orthogonality condition, which means lattice vectors a,b and c are mutually perpendicular (i.e., orthognal) to each other and fulfill these conditions: 
+
+```
+a x b = c
+a x c = b
+b x c = a
+```
+
+- _**A note on the microscopic degrees of freedom:**_
+
+To find the global minimum of an interface structure, it is essential to calculate the optimal distance between the different bulk phases at the interface. You also need to identify the termination site that corresponds to the structure with the lowest energy, as well as consider the homogeneous interface structures of the periodic images.
+
+To achieve these goals, I often use first-principles methods such as density functional theory (DFT), specifically with the Vienna Ab-initio Simulation Package [VASP](https://www.vasp.at/) at 0 Kelvin. This computational approach helps determine the initial structures for further first-principles calculations. 
+
 # Method for the development of FDW
 ## R3m
 Ferroelectric materials with a rhombohedral space group of R3m exhibit three types of ferroelectric domain walls (FDWs): R71, R109, and R180. Due to neutrality and mechanical compatibility, these FDWs develop along specific planes. For the R180 FDW, the ```{1-10}``` plane is used, while for R71 and R109, the FDWs are determined by the sum of the two polarization vectors.
@@ -271,148 +414,6 @@ For O120 domain walls, `DWBuilder` builds two variants: Head-to-Head/Tail-to-Tai
 ## - _**A note on the selection of domain wall termination sites:**_
 
 `DWBuilder` develops domain wall supercells by generating and stacking two different domains, with the termination of the domains depending on the input unit cell termination. For example, PbTiO3 in the P4mm space group can have TiO- or PbO-terminated domain wall structures. To develop both variants, the user needs to define the input unit cell structure such that in one variant, the Pb atom is in the center, leading to PbO-terminated domain walls, while in the other, the Ti atom is in the center, resulting in TiO-terminated domain walls (See [example](examples/P4mm)). Additionally, for complex systems, `DWBuilder` includes a function to add one or two layers by defining the domain size in fractional form (e.g., 2.5), providing precise control over the domain wall structure and thickness.
-
-# Usage
-To execute the code, one should run the dwbuilder command from the command line. Upon running, the user will be prompted to input the name of the input structure file, as well as the domain wall angle and size (expressed in number of unit cells). This script builds the domain wall structure based on the space group of the input structure with the assumed polarization directions as indicated below. 
-
-```
-R3c (Polarization direction (1-11))
-R3m (Polarization direction (001))
-P4mm (Polarization direction (001))
-p6_3cm (Polarization direction (-1-10))
-Pnma (Polarization direction (110))
-Pmc2_1 (user-defined)
-Amm2 (user-defined)
-```
-
-However, if you are unsure about the polarization dirction, you can run [polarization.py](scripts/polarization.py) to determine the polarization direction. This script uses the point charge model and you need to have both optimized ```CONTCAR``` and high symmtry structure ```POSCAR``` files to determine the polarization.
-
-## Example of using [dwbuilder.py](scripts/dwbuilder.py)
-_ex:_
-
-```
-> dwbuilder
-
-    ***************************************************
-    *                                                 *
-    *                Welcome to DWBuilder             *
-    *                                                 *
-    ***************************************************
-    *        Hey, you must know what you are doing.   *
-    *  Otherwise, you might get wrong results.        *
-    ***************************************************
-    *     Core Developer: M.Z.Khalid                  *
-    *     Main Contributors: S.M.Selbach              *
-    *     Email: zeeshan.khalid039@gmail.com          *
-    ***************************************************
-    
-Select a script to run:
-1: dwbuilder.py                6: supercell.py
-2: dbuilder.py                 7: vasp2cif.py
-3: hibuilder.py                8: bondanalysis.py
-4: slab.py                     9: rotationmatrix.py
-5: polarization.py             
-Enter the number of the script to run: 1
-Enter the input file name (with extension): BiFeO3_R3c.vasp
-Space group number: 161
-International symbol: R3c
-Lattice type: rhombohedral
-Select the domain wall angle:
-R180 - R180
-R71 - R71
-R109 - R109
-ALL - ALL
-ALL
-Enter the domain wall size (in number of unit cells): 3
-Enter the size of the supercell along the a direction: 1
-Enter the size of the supercell along the b direction: 1
-Enter the size of the supercell along the c direction: 1
-Enter the cutoff distance in angstroms to remove close atoms: 0
-Lattice strain for R109 DW:
-strain along a (%): 0.00
-strain along b (%): 0.00
-strain along c (%): 0.00
-Lattice strain for R71 DW:
-strain along a (%): 0.00
-strain along b (%): 0.00
-strain along c (%): 0.00
-Lattice strain for R180 DW:
-strain along a (%): 0.00
-strain along b (%): 0.00
-strain along c (%): 0.00
-Domain wall structures and supercells created successfully! Log file written to LOGFILE.txt
-```
-
-Once you have developed the desired domain wall structure, you can visualize in vesta or ase to further refine domain wall artifacts. 
-
-## Example of using [hibuilder.py](scripts/hibuilder.py)
-In this example, I have reproduced an orientation relationship reported in the following article [CMS](https://www.sciencedirect.com/science/article/pii/S0927025621000446). 
-
-```
-> dwbuilder
-
-    ***************************************************
-    *                                                 *
-    *                Welcome to DWBuilder             *
-    *                                                 *
-    ***************************************************
-    *        Hey, you must know what you are doing.   *
-    *  Otherwise, you might get wrong results.        *
-    ***************************************************
-    *     Core Developer: M.Z.Khalid                  *
-    *     Main Contributors: S.M.Selbach              *
-    *     Email: zeeshan.khalid039@gmail.com          *
-    ***************************************************
-    
-Select a script to run:
-1: dwbuilder.py                6: supercell.py
-2: dbuilder.py                 7: vasp2cif.py
-3: hibuilder.py                8: bondanalysis.py
-4: slab.py                     9: rotationmatrix.py
-5: polarization.py             
-Enter the number of the script to run: 3
-Enter the bulk phase 1file name (with extension): Fe_unitcell.vasp
-Enter the bulk phase 2 file name (with extension): Fe2Al5.vasp
-Bulk phase 1 Space group number: 229
-Bulk phase 1 International symbol: lm-3m
-Bulk phase 1 Lattice type: cubic
-Bulk phase 2 Space group number: 63
-Bulk phase 2 International symbol: Cmcm
-Bulk phase 2 Lattice type: orthrhombic
-Enter three comma-separated values for bulk 1 lattice direction a: 1,0,1
-Enter three comma-separated values for bulk 1 lattice direction b: 1.5,1.5,-1.5
-Enter three comma-separated values for bulk 1 lattice direction c: -2,4,2
-Enter three comma-separated values for bulk 2 lattice direction a: 0,0,-1
-Enter three comma-separated values for bulk 2 lattice direction b: 1,0,0
-Enter three comma-separated values for bulk 2 lattice direction c: 0,-2,0
-Enter the stacking direction 0 for a, 1 for b and 2 for c): 2
-strain along a (%): 1.1378
-strain along b (%): -0.5492
-strain along c (%): 8.2378
-Angular strain along a (radians): 0.0
-Angular strain along b (radians): 0.0
-Angular strain along c (radians): 0.0
-Warning: This code could generate interface/domain wall artifacts (i.e., Oxygen atoms, duplicate atoms etc,) at the interface, thus it requires manual adjustment.
-```
-[hibuilder.py](scripts/hibuilder.py) generates an initial configuration that needs additional refinement along a, b and c-directions. To determine the optimal interface distance along the a, b, and c axes, you can either perform static DFT or forcefield simulations. Additionally, you may need to explore various interfacial configurations to identify the thermodynamically stable structure.
-
-The above code generates the following interface structure (the periodic image) visualized by [VESTA](https://jp-minerals.org/vesta/en/):
-
-![image](https://github.com/mzkhalid039/DWBuilder/assets/52278972/19081982-1949-4e16-a734-ca27a6d733bb)
-
-It is also important to know that all the domain wall and interface structures built in this package follow the orthogonality condition, which means lattice vectors a,b and c are mutually perpendicular (i.e., orthognal) to each other and fulfill these conditions: 
-
-```
-a x b = c
-a x c = b
-b x c = a
-```
-
-- _**A note on the microscopic degrees of freedom:**_
-
-To find the global minimum of an interface structure, it is essential to calculate the optimal distance between the different bulk phases at the interface. You also need to identify the termination site that corresponds to the structure with the lowest energy, as well as consider the homogeneous interface structures of the periodic images.
-
-To achieve these goals, I often use first-principles methods such as density functional theory (DFT), specifically with the Vienna Ab-initio Simulation Package [VASP](https://www.vasp.at/) at 0 Kelvin. This computational approach helps determine the initial structures for further first-principles calculations. 
 
 ## Relevant Papers using ```DWBuilder```
 
