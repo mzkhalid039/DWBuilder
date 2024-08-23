@@ -62,7 +62,7 @@ The below example demonstrates the functionality and steps of the `dwbuilder.py`
     - The script generates the final domain wall structures.
     - It prints any lattice misfit information.
 
- ![Structure of the `DWBuilder` package.\label{fig:2}](dwbuilder_example){width="100%"}
+ ![Structure of the `DWBuilder` package.\label{fig:2}](dwbuilder-example){width="100%"}
 
 Figure 2 illustrates an example of P4mm PbTiO$_3$ and hexagonal manganite YMnO$_3$ domain wall structures.
 
