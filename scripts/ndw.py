@@ -1,3 +1,35 @@
+#!/usr/bin/env python
+
+"""
+Script: ndw.py
+Description:
+    This script constructs a neutral domain wall (NDW) structure by stacking two crystal structures (P1 and P2) 
+    along the b-axis in a supercell. The final structure is written to a VASP POSCAR file. The script also logs 
+    the process in a logfile.
+
+Usage:
+    python ndw.py <supercell_size> <P1_filename> <P2_filename> <output_file>
+
+    - <supercell_size>: The size of the supercell along the b-axis.
+    - <P1_filename>: Path to the POSCAR file of the first crystal structure (P1).
+    - <P2_filename>: Path to the POSCAR file of the second crystal structure (P2).
+    - <output_file>: The name of the output POSCAR file containing the final NDW structure.
+
+Functions:
+    - main(supercell, P1_filename, P2_filename, output_file, log): Main function that drives the script.
+    - import_poscar(file_path, log): Reads and parses a VASP POSCAR file, returning lattice vectors, atom types, atom counts, and atomic coordinates.
+    - write_poscar(file_path, lattice_vectors, atom_types, atom_counts, coordinates, log): Writes the final supercell structure to a POSCAR file.
+
+Logging:
+    - The script logs key steps and any errors encountered to "LOGFILE.txt".
+    - The command executed is also logged for reference.
+
+Notes:
+    - The script automatically adjusts atomic coordinates to ensure they are within the unit cell.
+    - The supercell is constructed by stacking P1 in the first half and P2 in the second half along the b-axis.
+"""
+
+
 import numpy as np
 import sys
 
