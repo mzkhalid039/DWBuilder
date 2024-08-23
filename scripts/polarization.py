@@ -1,5 +1,43 @@
 #!/usr/bin/env python
 
+"""
+Script: polarization.py
+Description:
+    This script performs a series of operations to calculate the polarization of a crystal structure based on the 
+    differences in atomic positions between the POSCAR and CONTCAR files. The script reads the atomic coordinates, 
+    computes differences, applies nominal charge values to each species, and calculates the resulting dipole moment 
+    and polarization. It also generates contour plots of the differences in atomic positions along each axis and 
+    writes the results to output files.
+
+Workflow:
+    1. Read atomic coordinates from POSCAR and CONTCAR files.
+    2. Determine the space group and lattice constants for both structures.
+    3. Compute differences in fractional atomic coordinates, accounting for periodic boundary conditions.
+    4. Write the coordinate differences to a file.
+    5. Generate and display contour plots of the differences along the x, y, and z axes.
+    6. Prompt the user to input nominal charge values for each species of atoms.
+    7. Apply the charge values and write a modified CHARGE file.
+    8. Calculate the dipole moment and polarization of the structure.
+    9. Save the dipole moments and polarization to output files and print the final polarization along each axis.
+
+Dependencies:
+    - os: For file and directory operations.
+    - numpy: For numerical operations and array manipulations.
+    - matplotlib: For plotting contour plots.
+    - ase: For reading atomic structures and extracting space group information.
+    - pymatgen: For space group analysis.
+    - spglib: For space group operations.
+
+Output:
+    - difference.txt: Contains the differences in atomic positions along x, y, and z axes.
+    - dipole_moments.txt: Contains the calculated dipole moments.
+    - polarization.txt: Contains the calculated polarization values along the x, y, and z axes.
+    - CHARGE: Contains the modified CHG file with applied nominal charge values.
+    - Contour plots: Displays plots showing the differences in atomic positions along each axis.
+
+"""
+
+
 import os
 import numpy as np
 import matplotlib.pyplot as plt
