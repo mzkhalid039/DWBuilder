@@ -1,3 +1,39 @@
+#!/usr/bin/env python
+
+"""
+Script: slab.py
+Description:
+    This script manages the addition of a vacuum layer to an atomic structure. It allows the user to specify 
+    the size of the vacuum layer and the direction in which it should be added (along the a, b, or c axis). 
+    The script reads the structure from a file, modifies the unit cell to include the vacuum layer, and 
+    saves the modified structure in VASP POSCAR format. All actions are logged in a log file.
+
+Key Features:
+    - Prompts the user to input the size and direction of the vacuum layer.
+    - Modifies the unit cell dimensions based on the user’s input without scaling the atomic positions.
+    - Saves the modified structure as 'structure_with_vacuum.vasp' in the current working directory.
+    - Logs the operations performed, including the vacuum size and direction, to 'LOGFILE.txt'.
+
+Usage:
+    - Run the script by executing `python vacuum_layer_manager.py` and follow the prompts.
+    - The user will be asked to provide the input file name, vacuum size, and direction.
+
+Dependencies:
+    - ASE (Atomic Simulation Environment): For reading and writing atomic structure files.
+    - Colorama: For colored text output in the terminal.
+
+Example:
+    $ python vacuum_layer_manager.py
+    Enter the input file name (with extension): input_file.vasp
+    Enter the size of the vacuum layer in angstroms: 10
+    Enter the direction to add the vacuum layer (a, b, or c): c
+    Structure with vacuum saved to structure_with_vacuum.vasp
+
+Output:
+    - The script produces a VASP POSCAR file with the added vacuum layer.
+    - A detailed log of the operation is saved to "LOGFILE.txt".
+"""
+
 import os
 import ase.io
 from colorama import init, Fore, Style
