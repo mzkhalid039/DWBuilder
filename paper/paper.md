@@ -7,10 +7,10 @@ tags:
   - multi-material inrerfaces
   - atomistic simulations (VASP, LAMMPS)
 authors:
-  - name: M.Z.Khalid
+  - name: M.Z. Khalid
     orcid: 0000-0002-7866-3870
     affiliation: 1
-  - name: S.M.Selbach
+  - name: S.M. Selbach
     affiliation: 1
 affiliations:
  - name: Department of Materials Science and Engineering, Norwegian University of Science and Technology, Trondheim, Norway
