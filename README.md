@@ -429,6 +429,9 @@ For O120 domain walls, `DWBuilder` builds two variants: Head-to-Head/Tail-to-Tai
 5. [Khalid MZ, Friis J, Ninive PH, Marthinsen K, Strandlie A. **A first-principles study of the Al (001)/Fe (0-11) interface.** In Materials Science Forum 2019 Jan 27 (Vol. 941, pp. 2349-2355). Trans Tech Publications Ltd.](https://www.scientific.net/MSF.941.2349)
 
 
+## Citation
+If you use `fraggler`, please cite the [paper](https://joss.theoj.org/papers/10.21105/joss.06895#)!
+
 # Questions/Contributions
 If you have any questions, find an issue you can get in contact with [me](mailto:zeeshan.khalid039@gmail.com).
 
