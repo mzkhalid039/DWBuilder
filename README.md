@@ -430,7 +430,7 @@ For O120 domain walls, `DWBuilder` builds two variants: Head-to-Head/Tail-to-Tai
 
 
 ## Citation
-If you use `fraggler`, please cite the [paper](https://joss.theoj.org/papers/10.21105/joss.06895#)!
+If you use `DWBuilder`, please cite the [paper](https://joss.theoj.org/papers/10.21105/joss.06895#)!
 
 # Questions/Contributions
 If you have any questions, find an issue you can get in contact with [me](mailto:zeeshan.khalid039@gmail.com).
