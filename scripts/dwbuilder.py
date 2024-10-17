@@ -166,16 +166,20 @@ def get_unique_path(directory, filename):
     return unique_filename
 
 def remove_close_atoms(atoms, cutoff):
+    # Set up neighbor list with half of the cutoff for radius, self_interaction=False ensures no atom compares with itself
     nl = NeighborList([cutoff / 2.0] * len(atoms), self_interaction=False, bothways=True)
     nl.update(atoms)
     indices_to_remove = set()
+    
     for i in range(len(atoms)):
         indices, offsets = nl.get_neighbors(i)
-        for idx in indices:
+        for idx, offset in zip(indices, offsets):
             if i < idx:  # To avoid double counting
-                distance = atoms.get_distance(i, idx)
+                distance = atoms.get_distance(i, idx, mic=True)  # mic=True for periodic boundary conditions
                 if distance < cutoff:
                     indices_to_remove.add(idx)
+    
+    # Remove atoms whose indices are in indices_to_remove
     atoms = atoms[[atom.index not in indices_to_remove for atom in atoms]]
     return atoms
 
